@@ -43,17 +43,7 @@
     </div>
     <script src="app.js"></script>
     <script>
-var user = firebase.auth().currentUser;
 
-if (user != null) {
-  user.providerData.forEach(function (profile) {
-    alert("Sign-in provider: "+profile.providerId);
-    alert("  Provider-specific UID: "+profile.uid);
-    alert("  Name: "+profile.displayName);
-    alert("  Email: "+profile.email);
-    alert("  Photo URL: "+profile.photoURL);
-  });
-}
 </script>
   </body>
 </html>
