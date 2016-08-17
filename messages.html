@@ -5,16 +5,18 @@
     <title>MusicTools Messages</title>
     <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
     <script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyCkr17eHQRyOX4tlE-qluYt52AhXM7Gg0I",
-    authDomain: "fir-musictools.firebaseapp.com",
-    databaseURL: "https://fir-musictools.firebaseio.com",
-    storageBucket: "firebase-musictools.appspot.com",
-  };
-  firebase.initializeApp(config);
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyCkr17eHQRyOX4tlE-qluYt52AhXM7Gg0I",
+      authDomain: "fir-musictools.firebaseapp.com",
+      databaseURL: "https://fir-musictools.firebaseio.com",
+      storageBucket: "firebase-musictools.appspot.com",
+    };
+    var userObject;
+    firebase.initializeApp(config);
     var database = firebase.database();
     firebase.auth().onAuthStateChanged(function(user) {
+      userObject = user;
       if (user) {
          // User is signed in.
         console.log("User signed in "+user.name);
@@ -28,10 +30,10 @@
       var name, email, photoUrl, uid;
 
       //if (user != null) {
-        name = user.displayName;
-        email = user.email;
-        photoUrl = user.photoURL;
-        uid = user.uid;
+        name = userObject.displayName;
+        email = userObject.email;
+        photoUrl = userObject.photoURL;
+        uid = userObject.uid;
       //} else {
       //  alert("User is null!");
       //  window.location.assign("/widget");
