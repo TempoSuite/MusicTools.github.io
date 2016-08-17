@@ -18,6 +18,7 @@ var signInWithPopup = function() {
  * Displays the UI for a signed in user.
  */
 var handleSignedInUser = function(user) {
+var photoURL;
 if (user != null) {
   user.providerData.forEach(function (profile) {
     alert("Sign-in provider: "+profile.providerId);
@@ -25,6 +26,7 @@ if (user != null) {
     alert("  Name: "+profile.displayName);
     alert("  Email: "+profile.email);
     alert("  Photo URL: "+profile.photoURL);
+    if (profile.photoURL != null) {photoURL = profile.photoURL;}
   });
 }
   document.getElementById('user-signed-in').style.display = 'block';
@@ -32,7 +34,7 @@ if (user != null) {
   document.getElementById('name').textContent = user.displayName;
   document.getElementById('email').textContent = user.email;
   if (user.photoURL){
-    document.getElementById('photo').src = user.photoURL;
+    document.getElementById('photo').src = photoURL;
     document.getElementById('photo').style.display = 'block';
   } else {
     document.getElementById('photo').style.display = 'none';
