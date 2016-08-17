@@ -28,6 +28,7 @@
         uid = user.uid;
       } else {
         alert("User is null!");
+        window.location.assign("/widget");
       }
       document.getElementById("messages").innerHTML = name+"\n"+email+"\n"+photoUrl+"\n"+uid;
     }
