@@ -17,7 +17,6 @@
     firebase.auth().onAuthStateChanged(function(user) {
   if (user) {
     // User is signed in.
-    alert("User is signed in!");
     window.onload = function() {
       var user = firebase.auth().currentUser;
       var name, email, photoUrl, uid;
