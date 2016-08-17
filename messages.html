@@ -19,12 +19,13 @@
       userObject = user;
       if (user) {
          // User is signed in.
-        console.log("User signed in "+user.name);
+        console.log("User signed in "+userObject.name);
       } else {
         // No user is signed in.
         window.location.assign("/widget");
      }
-     function initializeuser() {
+  });
+  function initializeuser() {
        console.log("Window loaded");
       //var user = firebase.auth().currentUser;
       var name, email, photoUrl, uid;
@@ -40,8 +41,6 @@
       //}
       document.getElementById("messages").innerHTML = name+"\n"+email+"\n"+photoUrl+"\n"+uid;
     }
-    });
-    
 
 </script>
     <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
