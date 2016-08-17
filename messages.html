@@ -18,6 +18,20 @@
   if (user) {
     // User is signed in.
     alert("User is signed in!");
+    window.onload = function() {
+      var user = firebase.auth().currentUser;
+      var name, email, photoUrl, uid;
+
+      if (user != null) {
+        name = user.displayName;
+        email = user.email;
+        photoUrl = user.photoURL;
+        uid = user.uid;
+      } else {
+        alert("User is null!");
+      }
+      document.getElementById("messages").innerHTML = name+"\n"+email+"\n"+photoUrl+"\n"+uid;
+    }
   } else {
     // No user is signed in.
     window.location.assign("/widget");
@@ -37,20 +51,7 @@
       </div>
     </div>
     <script>
-    window.onload = function() {
-      var user = firebase.auth().currentUser;
-      var name, email, photoUrl, uid;
-
-      if (user != null) {
-        name = user.displayName;
-        email = user.email;
-        photoUrl = user.photoURL;
-        uid = user.uid;
-      } else {
-        alert("User is null!");
-      }
-      document.getElementById("messages").innerHTML = name+"\n"+email+"\n"+photoUrl+"\n"+uid;
-    }
+    
     </script>
   </body>
 </html>
