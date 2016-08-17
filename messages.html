@@ -1,1 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>MusicTools</title>
+    <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+    <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCkr17eHQRyOX4tlE-qluYt52AhXM7Gg0I",
+    authDomain: "fir-musictools.firebaseapp.com",
+    databaseURL: "https://fir-musictools.firebaseio.com",
+    storageBucket: "firebase-musictools.appspot.com",
+  };
+  firebase.initializeApp(config);
+    var database = firebase.database();
+    if(auth.getCurrentUser() == null) {
+      window.location = "/widget"
+    }
+</script>
+    <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div id="container">
+      <h3>MusicTools</h3>
+      <div id="user-signed-in" class="hidden">
+        <div id="user-info">
+          <div id="photo-container">
+            <img id="photo"></img>
+          </div>
+          <div id="name"></div>
+          <div id="email"></div>
+          <div class="clearfix"></div>
+        </div>
+        <p>
+          <button id="sign-out">Sign Out</button>
+          <button id="delete-account">Delete account</button>
+        </p>
+      </div>
+      <div id="user-signed-out" class="hidden">
+        <h4>You are signed out.</h4>
+        <p>
+          <button id="sign-in-with-redirect">Sign In</button>
+        </p>
+      </div>
+    </div>
+    <script>
 
+</script>
+  </body>
+</html>
