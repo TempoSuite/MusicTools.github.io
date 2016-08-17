@@ -18,6 +18,15 @@ var signInWithPopup = function() {
  * Displays the UI for a signed in user.
  */
 var handleSignedInUser = function(user) {
+if (user != null) {
+  user.providerData.forEach(function (profile) {
+    alert("Sign-in provider: "+profile.providerId);
+    alert("  Provider-specific UID: "+profile.uid);
+    alert("  Name: "+profile.displayName);
+    alert("  Email: "+profile.email);
+    alert("  Photo URL: "+profile.photoURL);
+  });
+}
   document.getElementById('user-signed-in').style.display = 'block';
   document.getElementById('user-signed-out').style.display = 'none';
   document.getElementById('name').textContent = user.displayName;
