@@ -45,6 +45,8 @@
         email = user.email;
         photoUrl = user.photoURL;
         uid = user.uid;
+      } else {
+        alert("User is null!");
       }
       document.getElementById("messages").innerHTML = name+"\n"+email+"\n"+photoUrl+"\n"+uid;
     }
