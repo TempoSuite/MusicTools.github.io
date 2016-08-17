@@ -22,8 +22,7 @@
         // No user is signed in.
         window.location.assign("/widget");
      }
-    });
-    window.onload = function() {
+     window.onload = function() {
       //var user = firebase.auth().currentUser;
       var name, email, photoUrl, uid;
 
@@ -38,6 +37,8 @@
       }
       document.getElementById("messages").innerHTML = name+"\n"+email+"\n"+photoUrl+"\n"+uid;
     };
+    });
+    
 
 </script>
     <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
