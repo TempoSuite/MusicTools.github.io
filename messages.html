@@ -36,6 +36,7 @@
       </div>
     </div>
     <script>
+    window.onload = function() {
       var user = firebase.auth().currentUser;
       var name, email, photoUrl, uid;
 
@@ -46,6 +47,7 @@
         uid = user.uid;
       }
       document.getElementById("messages").innerHTML = name+"\n"+email+"\n"+photoUrl+"\n"+uid;
+    }
     </script>
   </body>
 </html>
