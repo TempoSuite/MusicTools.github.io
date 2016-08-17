@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>MusicTools</title>
+    <title>MusicTools Messages</title>
     <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
     <script>
   // Initialize Firebase
@@ -14,39 +14,35 @@
   };
   firebase.initializeApp(config);
     var database = firebase.database();
-    if(auth.getCurrentUser() == null) {
-      window.location = "/widget"
-    }
+    firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // User is signed in.
+  } else {
+    // No user is signed in.
+    window.location.assign("/widget");
+  }
+});
+var user = firebase.auth().currentUser;
+var name, email, photoUrl, uid;
+
+if (user != null) {
+  name = user.displayName;
+  email = user.email;
+  photoUrl = user.photoURL;
+  uid = user.uid;
+}
+document.getElementById("messages").innerHTML = name+"\n"+email+"\n"+photoUrl+"\n"+uid;
+
 </script>
     <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
     <div id="container">
-      <h3>MusicTools</h3>
-      <div id="user-signed-in" class="hidden">
-        <div id="user-info">
-          <div id="photo-container">
-            <img id="photo"></img>
-          </div>
-          <div id="name"></div>
-          <div id="email"></div>
-          <div class="clearfix"></div>
-        </div>
-        <p>
-          <button id="sign-out">Sign Out</button>
-          <button id="delete-account">Delete account</button>
-        </p>
-      </div>
-      <div id="user-signed-out" class="hidden">
-        <h4>You are signed out.</h4>
-        <p>
-          <button id="sign-in-with-redirect">Sign In</button>
-        </p>
+      <h3>MusicTools Messages</h3>
+      <div id="messages">
+        
       </div>
     </div>
-    <script>
-
-</script>
   </body>
 </html>
