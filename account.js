@@ -35,6 +35,7 @@ var handleSignedInUser = function(user) {
     });
   }
   console.log("Sign in handled");
+  writeUserData(uid, displayName, email, photoURL, provider, providerUID);
   onAuthInit();
 };
 
@@ -68,12 +69,14 @@ window.addEventListener('load', initApp);
 
 function writeUserData(userId, name, email, imageUrl, provider, providerUID) {
   var now = Date.now();
+  console.log("Writing to database at "+now);
   firebase.database().ref('users/' + userId).update({
-    username: name,
+    name: name,
     email: email,
-    profile_picture : imageUrl,
+    profilepicture : imageUrl,
     provider: provider,
     provider_uid : providerUID,
     last_updated : now
   });
+  console.log("Done writing to database.")
 }
