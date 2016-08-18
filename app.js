@@ -21,11 +21,11 @@ var handleSignedInUser = function(user) {
 var photoURL;
 if (user != null) {
   user.providerData.forEach(function (profile) {
-    alert("Sign-in provider: "+profile.providerId);
-    alert("  Provider-specific UID: "+profile.uid);
-    alert("  Name: "+profile.displayName);
-    alert("  Email: "+profile.email);
-    alert("  Photo URL: "+profile.photoURL);
+    //alert("Sign-in provider: "+profile.providerId);
+    //alert("  Provider-specific UID: "+profile.uid);
+    //alert("  Name: "+profile.displayName);
+    //alert("  Email: "+profile.email);
+    //alert("  Photo URL: "+profile.photoURL);
     if (profile.photoURL != null && user.photoURL == null) {
       photoURL = profile.photoURL;
       user.updateProfile({
