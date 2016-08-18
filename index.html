@@ -36,7 +36,7 @@
         </a>
         <a href="/account">
           <span id="accountimgandname">
-             | Signed Out
+             <span class="larger">|</span> Signed Out
             <img src="ic_account.svg" height="35px" id="accountImage" align="middle"/>
           </span>
         </a>
@@ -53,7 +53,7 @@
         if(photoURL == null) {
           photoURL = "null.svg";
         }
-        document.getElementById("accountimgandname").innerHTML=" | "+displayName+" <img src='"+photoURL+"' height='35px' id='accountImage' align='middle' />";
+        document.getElementById("accountimgandname").innerHTML=" <span class="larger">|</span> "+displayName+" <img src='"+photoURL+"' height='35px' id='accountImage' align='middle' />";
       }
     </script>
     <script src="account.js"></script>
