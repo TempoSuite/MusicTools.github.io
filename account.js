@@ -34,6 +34,7 @@ var handleSignedInUser = function(user) {
       }
     });
   }
+  onAuthInit();
 };
 
 
