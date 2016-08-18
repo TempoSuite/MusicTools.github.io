@@ -88,12 +88,24 @@
         </a>
 </header>
       <h3>MusicTools Messages</h3>
-      <div id="messages">
-        Not Signed In!
+      <div id="content">
+        <div id="messages">
+          Not Signed In!
+        </div>
       </div>
+      <footer>
+        &copy; Sub 6 Resources 2016
+      </footer>
     </div>
     <script>
-    
+      function onAuthInit() {
+        if(photoURL == null) {
+          photoURL = "null.svg";
+        }
+        document.getElementById("accountimgandname").innerHTML=" <span class='larger'>|</span> "+displayName+" <img src='"+photoURL+"' height='35px' id='accountImage' align='middle' />";
+      }
     </script>
+    <script src="account.js"></script>
+    <link href="styles.css" rel="stylesheet">
   </body>
 </html>
