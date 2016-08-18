@@ -1,1 +1,51 @@
-
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>MusicTools</title>
+    <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyCkr17eHQRyOX4tlE-qluYt52AhXM7Gg0I",
+        authDomain: "fir-musictools.firebaseapp.com",
+        databaseURL: "https://fir-musictools.firebaseio.com",
+        storageBucket: "firebase-musictools.appspot.com",
+      };
+      firebase.initializeApp(config);
+      var database = firebase.database();
+    </script>
+    <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body>
+    <div id="container">
+      <header>
+        <div id="title">MusicTools</div>
+        <div id="icons"></div>
+      </header>
+      <div id="content">
+        
+      </div>
+      <footer>
+        &copy; Sub 6 Resources 2016
+      </footer>
+    </div>
+    <script src="account.js"></script>
+    <style>
+      * {
+        box-sizing:border-box;
+      }
+      body {
+        margin:0;
+        padding:0;
+      }
+      header {
+        padding:15px;
+        width:100%;
+        background-color:#001E8D;
+        color:white;
+      }
+    </style>
+  </body>
+</html>
