@@ -9,6 +9,9 @@ function signIn() {
 function signOut() {
   firebase.auth().signOut();
   console.log("Signed Out");
+  console.log("UI update started...");
+  onAuthInit();
+  console.log("UI update finished.");
 }
 
 function deleteAccount() {
