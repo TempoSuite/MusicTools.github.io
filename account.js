@@ -65,3 +65,15 @@ var initApp = function() {
 };
 
 window.addEventListener('load', initApp);
+
+function writeUserData(userId, name, email, imageUrl, provider, providerUID) {
+  var now = Date.now();
+  firebase.database().ref('users/' + userId).update({
+    username: name,
+    email: email,
+    profile_picture : imageUrl,
+    provider: provider,
+    provider_uid : providerUID,
+    last_updated : now
+  });
+}
