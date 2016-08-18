@@ -47,8 +47,9 @@
     console.log("UI updated successfully!");
     if(useruid != null && useruid != undefined) {
       console.log("Updating database...");
-      console.log(writeUserData(useruid, username, useremail, userphotoUrl));
+      var a = writeUserData(useruid, username, useremail, userphotoUrl);
       console.log("Done updating database");
+      console.log(a);
     }
   }
   function writeUserData(theuserId, thename, theemail, theimageUrl) {
