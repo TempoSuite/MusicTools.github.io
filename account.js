@@ -34,6 +34,7 @@ var handleSignedInUser = function(user) {
       }
     });
   }
+  console.log("Sign in handled");
   onAuthInit();
 };
 
@@ -44,6 +45,7 @@ var handleSignedInUser = function(user) {
 var handleSignedOutUser = function() {
   //TODO add signed out thing.
   signedOut = true;
+  console.log("Sign out handled");
   onAuthInit();
 };
 
