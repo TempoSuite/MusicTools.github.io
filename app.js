@@ -9,6 +9,13 @@ function signIn() {
 function signOut() {
   firebase.auth().signOut();
   console.log("Signed Out");
+  console.log("Nulling variables...");
+  displayName = undefined;
+  photoURL = null;
+  uid = undefined;
+  email = undefined;
+  provider = undefined;
+  providerUID = undefined;
   console.log("UI update started...");
   onAuthInit();
   console.log("UI update finished.");
