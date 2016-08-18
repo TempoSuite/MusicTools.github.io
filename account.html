@@ -38,11 +38,14 @@
           <span id="accountimgandname">
              <span class="larger">|</span> Signed Out
             <img src="ic_account.svg" height="35px" id="accountImage" align="middle"/>
+            <button onClick="signIn()">Sign In</button>
+            <button onClick="signOut()">Sign Out</button>
+            <button onClick="deleteAccount()">Delete Account</button>
           </span>
         </a>
       </header>
       <div id="content">
-        <img src="ic_account.svg" width="200px"/>
+        <img src="ic_account_dark.svg" width="200px"/>
       </div>  
       <footer>
         &copy; Sub 6 Resources 2016
@@ -52,11 +55,13 @@
       function onAuthInit() {
         if(photoURL == null) {
           photoURL = "null.svg";
+          photoURLDark = "ic_account_dark.svg"
         }
         document.getElementById("accountimgandname").innerHTML=" <span class='larger'>|</span> "+displayName+" <img src='"+photoURL+"' height='35px' id='accountImage' align='middle' />";
       }
     </script>
     <script src="account.js"></script>
+    <script src="app.js"></script>
     <link href="styles.css" rel="stylesheet">
   </body>
 </html>
