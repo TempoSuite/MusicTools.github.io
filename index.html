@@ -58,6 +58,9 @@
         if(photoURL == null) {
           photoURL = "null.svg";
         }
+        if(displayName == undefined) {
+          displayName = "Signed Out";
+        }
         document.getElementById("accountimgandname").innerHTML=" <span class='larger'>|</span> "+displayName+" <img src='"+photoURL+"' height='35px' id='accountImage' align='middle' />";
       }
     </script>
