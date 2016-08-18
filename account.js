@@ -44,6 +44,7 @@ var handleSignedInUser = function(user) {
 var handleSignedOutUser = function() {
   //TODO add signed out thing.
   signedOut = true;
+  onAuthInit();
 };
 
 // Listen to change in auth state so it displays the correct UI for when
