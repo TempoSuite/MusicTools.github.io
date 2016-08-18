@@ -31,6 +31,7 @@
         console.log(photoUrl);
         uid = userObject.uid;
         console.log(uid);
+        updateUi(name, email, photoUrl, uid);
       } else {
         // No user is signed in.
         window.location.assign("/widget");
@@ -41,7 +42,9 @@
        updateUi(name, email, photoUrl, uid);
     };
   function updateUi(username, useremail, userphotoUrl, useruid) {
+    console.log("UI updating");
     document.getElementById("messages").innerHTML = username+"\n"+useremail+"\n"+userphotoUrl+"\n"+useruid;
+    console.log("UI updated successfully!");
   }
 
 </script>
