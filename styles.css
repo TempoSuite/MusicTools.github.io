@@ -31,6 +31,9 @@ header > a {
   color:white;
   text-decoration:none;
 }
+header > a > #messageslink, #accountimgandname {
+  font-size:18px;
+}
 footer {
   background-color:#001E8D;
   font-family: 'Roboto', sans-serif;
