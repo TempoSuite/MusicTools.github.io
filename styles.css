@@ -26,6 +26,10 @@ header {
   top:0;
   font-size:23px;
 }
+header > a {
+  color:white;
+  text-decoration:none;
+}
 footer {
   background-color:#001E8D;
   font-family: 'Roboto', sans-serif;
