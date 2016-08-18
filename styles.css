@@ -32,7 +32,7 @@ header > a {
   text-decoration:none;
 }
 header > a > #messageslink, #accountimgandname {
-  font-size:18px;
+  font-size:13px;
 }
 footer {
   background-color:#001E8D;
