@@ -21,21 +21,21 @@
     <div id="container">
       <header>
         <a href="index.html">
-          <div id="imgandtitle">
+          <span id="imgandtitle">
             <img src="ic_launcher.png" height="35px" />
             <span id="title">MusicTools</span>
-          </div>
+          </span>
         </a>
         <a href="/messages">
-          <div id="messageslink">
+          <span id="messageslink">
             Messages
-          </div>
+          </span>
         </a>
         <a href="/account">
-          <div id="accountimgandname">
-            <img src="ic_account.svg" height="35px" align="middle"/>
+          <span id="accountimgandname">
+            <img src="ic_account.svg" height="35px" id="accountImage" align="middle"/>
             Signed Out
-          </div>
+          </span>
         </a>
       </header>
       <div id="content">
@@ -45,6 +45,11 @@
         &copy; Sub 6 Resources 2016
       </footer>
     </div>
+    <script>
+      function onAuthInit() {
+        document.getElementById("accountimgandname").innerHTML="<img src='"+imageURL+"' height='35px' id='accountImage' align='middle' />"+displayName;
+      }
+    </script>
     <script src="account.js"></script>
     <link href="styles.css" rel="stylesheet">
   </body>
