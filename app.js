@@ -26,7 +26,19 @@ if (user != null) {
     alert("  Name: "+profile.displayName);
     alert("  Email: "+profile.email);
     alert("  Photo URL: "+profile.photoURL);
-    if (profile.photoURL != null) {photoURL = profile.photoURL;}
+    if (profile.photoURL != null) {
+photoURL = profile.photoURL;
+user.updateProfile({
+  displayName: user.displayName,
+  photoURL: photoURL
+}).then(function() {
+  // Update successful.
+  console.log("User imageURL updated successfully");
+}, function(error) {
+  // An error happened.
+  console.log("Error in updating user imageURL: "+error);
+});
+}
   });
 }
   document.getElementById('user-signed-in').style.display = 'block';
