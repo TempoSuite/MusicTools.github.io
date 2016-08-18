@@ -13,6 +13,7 @@
       storageBucket: "firebase-musictools.appspot.com",
     };
     var userObject;
+    var name, email, photoUrl, uid;
     firebase.initializeApp(config);
     var database = firebase.database();
     firebase.auth().onAuthStateChanged(function(user) {
@@ -20,6 +21,12 @@
       if (user) {
          // User is signed in.
         console.log("User signed in "+userObject.name);
+
+      //if (user != null) {
+        name = userObject.displayName;
+        email = userObject.email;
+        photoUrl = userObject.photoURL;
+        uid = userObject.uid;
       } else {
         // No user is signed in.
         window.location.assign("/widget");
@@ -28,18 +35,12 @@
   window.onload = function() {
        console.log("Window loaded");
       //var user = firebase.auth().currentUser;
-      var name, email, photoUrl, uid;
-
-      //if (user != null) {
-        name = userObject.displayName;
-        email = userObject.email;
-        photoUrl = userObject.photoURL;
-        uid = userObject.uid;
+      
       //} else {
       //  alert("User is null!");
       //  window.location.assign("/widget");
       //}
-      document.getElementById("messages").innerHTML = name+"\n"+email+"\n"+photoUrl+"\n"+uid;
+        document.getElementById("messages").innerHTML = name+"\n"+email+"\n"+photoUrl+"\n"+uid;
     };
 
 </script>
