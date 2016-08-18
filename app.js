@@ -46,6 +46,11 @@ function accountDelete() {
   if(a==randomNumber) {
     deleteAccount();
   } else {
+    if(a == "" || a == null || a == undefined) {
+      return;
+    } else {
+      alert("Wrong number entered. Account not deleted.")
+    }
     return;
   }
 }
