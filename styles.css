@@ -1,5 +1,5 @@
 
-@import 'https://fonts.googleapis.com/css?family=Roboto:100,400';
+@import 'https://fonts.googleapis.com/css?family=Roboto:100,200,300,400';
 * {
   box-sizing:border-box;
 }
@@ -20,7 +20,7 @@ header {
   box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4);
   color:white;
   font-family: 'Roboto', sans-serif;
-  font-weight:100;
+  font-weight:200;
   text-align:left;
   position:absolute;
   top:0;
@@ -28,7 +28,7 @@ header {
 footer {
   background-color:#001E8D;
   font-family: 'Roboto', sans-serif;
-  font-weight:100;
+  font-weight:200;
   color:white;
   width:100%;
   padding:10px;
