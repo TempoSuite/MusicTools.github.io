@@ -50,6 +50,9 @@
     </div>
     <script>
       function onAuthInit() {
+        if(photoURL == null) {
+          photoURL = "null.svg";
+        }
         document.getElementById("accountimgandname").innerHTML="<img src='"+photoURL+"' height='35px' id='accountImage' align='middle' /> "+displayName;
       }
     </script>
