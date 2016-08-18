@@ -52,7 +52,7 @@
     }
   }
   function writeUserData(theuserId, thename, theemail, theimageUrl) {
-    firebase.database().ref('users/' + theuserId).push({
+    firebase.database().update('users/' + theuserId).push({
       name: thename,
       email: theemail,
       profilepicture : theimageUrl
