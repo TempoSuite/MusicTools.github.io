@@ -16,51 +16,7 @@
     var name, email, photoUrl, uid;
     firebase.initializeApp(config);
     var database = firebase.database();
-    firebase.auth().onAuthStateChanged(function(user) {
-      userObject = user;
-      if (user) {
-         // User is signed in.
-        console.log("User signed in "+userObject.displayName);
-
-      //if (user != null) {
-        name = userObject.displayName;
-        console.log(name);
-        email = userObject.email;
-        console.log(email);
-        photoUrl = userObject.photoURL;
-        console.log(photoUrl);
-        uid = userObject.uid;
-        console.log(uid);
-        updateUi(name, email, photoUrl, uid);
-      } else {
-        // No user is signed in.
-        window.location.assign("/widget");
-     }
-  });
-  window.onload = function() {
-       console.log("Window loaded");
-       updateUi(name, email, photoUrl, uid);
-    };
-  function updateUi(username, useremail, userphotoUrl, useruid) {
-    console.log("UI updating");
-    document.getElementById("messages").innerHTML = username+"\n"+useremail+"\n"+userphotoUrl+"\n"+useruid;
-    console.log("UI updated successfully!");
-    if(useruid != null && useruid != undefined) {
-      console.log("Updating database...");
-      writeUserData(useruid, username, useremail, userphotoUrl);
-      console.log("Done updating database");
-    }
-  }
-  function writeUserData(theuserId, thename, theemail, theimageUrl) {
-    firebase.database().ref('users/' + theuserId).update({
-      name: thename,
-      email: theemail,
-      profilepicture : theimageUrl
-    });
-  }
-
-</script>
-    <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
@@ -69,7 +25,7 @@
         <a href="index.html">
           <span id="imgandtitle">
             <img src="ic_launcher.png" height="35px" />
-            <span id="title">MusicTools</span>
+            <span id="title">MusicTools - Messages</span>
           </span>
         </a>
         <span class="spacer">
