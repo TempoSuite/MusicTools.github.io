@@ -47,12 +47,12 @@
     console.log("UI updated successfully!");
     if(useruid != null && useruid != undefined) {
       console.log("Updating database...");
-      writeUserData(useruid, username, useremail, userphotoUrl);
+      console.log(writeUserData(useruid, username, useremail, userphotoUrl));
       console.log("Done updating database");
     }
   }
   function writeUserData(theuserId, thename, theemail, theimageUrl) {
-    firebase.database().update('users/' + theuserId).push({
+    return firebase.database().update('users/' + theuserId).push({
       name: thename,
       email: theemail,
       profilepicture : theimageUrl
