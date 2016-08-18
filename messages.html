@@ -38,8 +38,11 @@
   });
   window.onload = function() {
        console.log("Window loaded");
-       document.getElementById("messages").innerHTML = name+"\n"+email+"\n"+photoUrl+"\n"+uid;
+       updateUi(name, email, photoUrl, uid);
     };
+  function updateUi(username, useremail, userphotoUrl, useruid) {
+    document.getElementById("messages").innerHTML = username+"\n"+useremail+"\n"+userphotoUrl+"\n"+useruid;
+  }
 
 </script>
     <link href="style.css" rel="stylesheet" type="text/css" media="screen" />
