@@ -43,8 +43,8 @@
       </header>
       <div id="content">
         <img src="ic_account_dark.svg" width="100px" id="image"/>
-        <span id="name" style="font-weight:bold; font-size:30px;">Logged Out</span>
-        <span id="email"></span>
+        <span id="name" style="font-weight:bold; font-size:30px;">Logged Out</span><br />
+        <span id="email"></span><br />
         <button onClick="signIn()" id="signin">Sign In</button>
         <button onClick="signOut()" id="signout">Sign Out</button>
         <button onClick="accountDelete()" id="delete">Delete Account</button>
@@ -64,12 +64,12 @@
         if(displayName == undefined) {
           displayName = "Signed Out";
         }
-        if(email == undefined || email == null) {
+        if(email == undefined || email == null || email == "") {
           email == "";
         }
         document.getElementById("accountimgandname").innerHTML=" <span class='larger'>|</span> "+displayName+" <img src='"+photoURL+"' height='35px' id='accountImage' align='middle' />";
         document.getElementById("name").innerHTML = displayName;
-        document.getElementById("email").innerHTML = email;
+        document.getElementById("email").innerHTML = ""+email;
         document.getElementById("image").src = photoURLDark;
       }
     </script>
