@@ -49,3 +49,12 @@ img {
 .larger {
   font-size:23px;
 }
+button {
+  padding:10px;
+  margin:10px;
+  background-color:#001E8D;
+  color:white;
+  -webkit-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4);
+  -moz-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4);
+  box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4);
+}
