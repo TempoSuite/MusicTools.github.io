@@ -45,6 +45,9 @@ if (user != null) {
   document.getElementById('user-signed-out').style.display = 'none';
   document.getElementById('name').textContent = user.displayName;
   document.getElementById('email').textContent = user.email;
+  if(photoURL == undefined || photoURL == null) {
+    photoURL = user.photoURL;
+  }
   if (photoURL){
     document.getElementById('photo').src = photoURL;
     document.getElementById('photo').style.display = 'block';
