@@ -16,6 +16,7 @@ function signOut() {
   email = undefined;
   provider = undefined;
   providerUID = undefined;
+  console.log("Variable null finished.");
   console.log("UI update started...");
   onAuthInit();
   console.log("UI update finished.");
