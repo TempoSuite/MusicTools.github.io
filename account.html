@@ -42,28 +42,8 @@
         </a>
       </header>
       <div id="content">
-        <h3>MusicTools</h3>
-        <div id="user-signed-in" class="hidden">
-          <div id="user-info">
-            <div id="photo-container">
-              <img id="photo"></img>
-            </div>
-            <div id="name"></div>
-            <div id="email"></div>
-            <div class="clearfix"></div>
-          </div>
-          <p>
-            <button id="sign-out">Sign Out</button>
-            <button id="delete-account">Delete account</button>
-          </p>
-        </div>
-        <div id="user-signed-out" class="hidden">
-          <h4>You are signed out.</h4>
-          <p>
-            <button id="sign-in-with-redirect">Sign In</button>
-          </p>
-        </div>
-      </div>
+        <img src="ic_account.svg" width="200px"/>
+      </div>  
       <footer>
         &copy; Sub 6 Resources 2016
       </footer>
@@ -76,7 +56,6 @@
         document.getElementById("accountimgandname").innerHTML=" <span class='larger'>|</span> "+displayName+" <img src='"+photoURL+"' height='35px' id='accountImage' align='middle' />";
       }
     </script>
-    <script src="app.js"></script>
     <script src="account.js"></script>
     <link href="styles.css" rel="stylesheet">
   </body>
