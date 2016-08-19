@@ -7,6 +7,7 @@ function signIn() {
 };
 
 function signOut() {
+  signedOut = true;
   firebase.auth().signOut();
   console.log("Signed Out");
   console.log("Nulling variables...");
