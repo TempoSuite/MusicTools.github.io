@@ -60,4 +60,5 @@ button {
   border:none;
   font-family: 'Roboto', sans-serif;
   font-weight:300;
+  cursor:pointer;
 }
