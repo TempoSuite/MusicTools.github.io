@@ -42,7 +42,7 @@ function sendMessage() {
         return false;
       }
       function attachMessageListener() {
-           console.log("Attaching listener");
+           console.log("Attaching listener to messages/to/"+uid);
            var messagesRef = firebase.database().ref('messages/to/' + uid);
            messagesRef.on('child_added', function(data) {
                 console.log("Calling element add");
