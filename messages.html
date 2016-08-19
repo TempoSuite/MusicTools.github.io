@@ -79,11 +79,15 @@
         alert(subject);
         alert(messageContent);
         var punctuationless = messageEmail.replace(/['!"#$%&\\'()\*+,\-\.\/:;<=>?@\[\\\]\^_`{|}‌​~']/g,"");
-var     messageEmailWithoutPunctuation = punctuationless.replace(/\s{2,}/g,"");
+        var messageEmailWithoutPunctuation = punctuationless.replace(/\s{2,}/g,"");
         var userId = firebase.auth().currentUser.uid;
         firebase.database().ref('/publicusers/' + messageEmailWithoutPunctuation).once('value').then(function(snapshot) {
-          var otheruid = snapshot.val().uid;
-          alert(otheruid);
+          if(snapshot.val() != null) {
+            var otheruid = snapshot.val().uid;
+          } else {
+            alert("The email address you entered is not registered with MusicTools.");
+            return false;
+          }
         });
         return false;
       }
