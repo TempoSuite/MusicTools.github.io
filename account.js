@@ -11,6 +11,7 @@ var signInWithRedirect = function() {
  */
 var handleSignedInUser = function(user) {
   signedOut = false;
+  handleSignIn();
   if (user != null) {
     displayName = user.displayName;
     email = user.email;
@@ -47,6 +48,7 @@ var handleSignedOutUser = function() {
   //TODO add signed out thing.
   signedOut = true;
   console.log("Sign out handled");
+  handleSignOut();
   onAuthInit();
 };
 
