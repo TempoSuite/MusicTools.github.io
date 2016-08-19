@@ -54,19 +54,25 @@
       </footer>
     </div>
     <script>
-      function onAuthInit() {
-        if(signedOut) {
-          document.getElementById("signin").display="block";
-          document.getElementById("signout").display="none";
-          document.getElementById("delete").display="none";
-          document.getElementById("email").display="none";
-          document.getElementById("name").display="none";
-        } else {
+      function handleSignIn() {
           document.getElementById("signin").display="none";
           document.getElementById("signout").display="block";
           document.getElementById("delete").display="block";
           document.getElementById("email").display="block";
           document.getElementById("name").display="block";
+      }
+      function handleSignOut() {
+          document.getElementById("signin").display="block";
+          document.getElementById("signout").display="none";
+          document.getElementById("delete").display="none";
+          document.getElementById("email").display="none";
+          document.getElementById("name").display="none";
+      }
+      function onAuthInit() {
+        if(signedOut) {
+          
+        } else {
+          
         }
         if(photoURL == null || photoURL == "null.svg") {
           photoURL = "null.svg";
