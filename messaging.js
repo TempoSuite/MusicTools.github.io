@@ -17,26 +17,34 @@ function sendMessage() {
             return false;
           }
           console.log("Updating message database...");
-          firebase.database().ref('/to/'+otheruid).push({
+          var pushData = {
             content:messageContent,
             title:subject,
             from:uid,
             fromemail:email
-          },handleError(error));
-          firebase.database().ref('/from/'+uid).push({
+          };
+          var pushData2 = {
             content:messageContent,
             title:subject,
             to:otheruid,
             toemail:messageEmail
-          },handleError(error));
-          console.log("Done updating message database.")
-        });
-        return false;
-      }
-      function handleError(error) {
+          };
+          var uniquekey = firebase.database().ref('/to/'+otheruid).push().key;
+          firebase.database().ref('/to/'+otheruid).update(pushData,new function(error) {
               if(error == null) {
-                      return;
+                      
               } else {
                       alert(error);
               }
+          });
+          firebase.database().ref('/from/'+uid+"/"+uniquekey).update(pushData2,new function(error) {
+              if(error == null) {
+                      
+              } else {
+                      alert(error);
+              }
+          });
+          console.log("Done updating message database.")
+        });
+        return false;
       }
