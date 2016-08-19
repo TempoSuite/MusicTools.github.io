@@ -13,7 +13,7 @@ function signOut() {
   displayName = undefined;
   photoURL = null;
   uid = undefined;
-  email = undefined;
+  email = "";
   provider = undefined;
   providerUID = undefined;
   console.log("Variable null finished.");
