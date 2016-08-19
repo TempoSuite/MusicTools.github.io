@@ -11,7 +11,6 @@ var signInWithRedirect = function() {
  */
 var handleSignedInUser = function(user) {
   signedOut = false;
-  handleSignIn();
   if (user != null) {
     displayName = user.displayName;
     email = user.email;
@@ -38,6 +37,7 @@ var handleSignedInUser = function(user) {
   console.log("Sign in handled");
   writeUserData(uid, displayName, email, photoURL, provider, providerUID);
   onAuthInit();
+  handleSignIn(); 
 };
 
 
@@ -48,8 +48,8 @@ var handleSignedOutUser = function() {
   //TODO add signed out thing.
   signedOut = true;
   console.log("Sign out handled");
-  handleSignOut();
   onAuthInit();
+  handleSignOut();
 };
 
 // Listen to change in auth state so it displays the correct UI for when
