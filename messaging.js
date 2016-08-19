@@ -29,11 +29,11 @@ function sendMessage() {
             to:otheruid,
             toemail:messageEmail
           };
-          var uniquekey = firebase.database().ref('/to/'+otheruid).push().key;
+          var uniquekey = firebase.database().ref('messages/to/'+otheruid).push().key;
           console.log("Unique key generated");
-          firebase.database().ref('/to/'+otheruid+"/"+uniquekey).update(pushData);
+          firebase.database().ref('messages/to/'+otheruid+"/"+uniquekey).update(pushData);
           console.log("To generated successfully");
-          firebase.database().ref('/from/'+uid+"/"+uniquekey).update(pushData2);
+          firebase.database().ref('messages/from/'+uid+"/"+uniquekey).update(pushData2);
           console.log("From generated successfully");
           console.log("Done updating message database.");
         });
