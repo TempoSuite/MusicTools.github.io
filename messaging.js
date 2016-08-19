@@ -67,6 +67,3 @@ function sendMessage() {
              document.getElementById("messages").appendChild(para3);
              console.log("Done");
       }
-      
-      
-      attachMessageListener();
