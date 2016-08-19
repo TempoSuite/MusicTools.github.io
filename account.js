@@ -77,8 +77,7 @@ function writeUserData(userId, name, email, imageUrl, provider, providerUID) {
     email: email,
     profilepicture : imageUrl,
     provider: provider,
-    provider_uid : providerUID,
-    last_updated : now
+    provider_uid : providerUID
   });
   console.log("Done writing to database.")
 }
