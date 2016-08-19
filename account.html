@@ -71,6 +71,9 @@
         document.getElementById("name").innerHTML = displayName;
         document.getElementById("email").innerHTML = ""+email;
         document.getElementById("image").src = photoURLDark;
+        if(document.getElementById("email").innerHTML == "undefined") {
+          document.getElementById("email").innerHTML = "";
+        }
       }
     </script>
     <script src="account.js"></script>
