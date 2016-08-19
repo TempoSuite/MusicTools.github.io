@@ -68,7 +68,7 @@
           document.getElementById("email").display="block";
           document.getElementById("name").display="block";
         }
-        if(photoURL == null) {
+        if(photoURL == null || photoURL == "null.svg") {
           photoURL = "null.svg";
           photoURLDark = "ic_account_dark.svg"
         } else {
