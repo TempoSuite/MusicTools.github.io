@@ -82,8 +82,8 @@
 var     messageEmailWithoutPunctuation = punctuationless.replace(/\s{2,}/g,"");
         var userId = firebase.auth().currentUser.uid;
         firebase.database().ref('/publicusers/' + messageEmailWithoutPunctuation).once('value').then(function(snapshot) {
-          var uid = snapshot.val().uid;
-          alert(uid);
+          var otheruid = snapshot.val().uid;
+          alert(otheruid);
         });
         return false;
       }
