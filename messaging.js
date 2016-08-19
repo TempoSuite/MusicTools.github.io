@@ -16,6 +16,7 @@ function sendMessage() {
             alert("The email address you entered is not registered with MusicTools.");
             return false;
           }
+          alert(otheruid);
         });
         return false;
       }
