@@ -36,6 +36,8 @@ function sendMessage() {
           firebase.database().ref('messages/from/'+uid+"/"+uniquekey).update(pushData2);
           console.log("From generated successfully");
           console.log("Done updating message database.");
+          alert("Message Sent");
+          window.location.assign("/messages");
         });
         return false;
       }
