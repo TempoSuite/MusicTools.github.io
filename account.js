@@ -79,8 +79,8 @@ function writeUserData(userId, name, email, imageUrl, provider, providerUID) {
     provider: provider,
     provider_uid : providerUID
   });
-  var punctuationless = email.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
-  var emailWithoutPunctuation = punctuationless.replace(/\s{2,}/g," ");
+  var punctuationless = email.replace(/['!"#$%&\\'()\*+,\-\.\/:;<=>?@\[\\\]\^_`{|}‌​~']/g,"");
+  var emailWithoutPunctuation = punctuationless.replace(/\s{2,}/g,"");
   firebase.database().ref('publicusers/' + emailWithoutPunctuation).update({
     uid: userId
   });
