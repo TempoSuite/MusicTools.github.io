@@ -42,11 +42,18 @@
             <img src="ic_account.svg" height="35px" id="accountImage" align="middle"/>
           </span>
         </a>
-</header>
-      <h3>MusicTools Messages</h3>
+      </header>
       <div id="content">
         <div id="messages">
           Not Signed In!
+        </div>
+        <div id="new_message">
+          <form id="message_form" method="send_message()">
+            <input type="email" hint="email" name="to" required>
+            <input type="text" hint="subject" name="title" required>
+            <input type="paragraph" name="content" hint="Enter message here" required>
+            <input type="submit" name="submit" id="submit">
+          </form>
         </div>
       </div>
       <footer>
