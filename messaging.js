@@ -16,7 +16,20 @@ function sendMessage() {
             alert("The email address you entered is not registered with MusicTools.");
             return false;
           }
-          alert(otheruid);
+          console.log("Updating message database...")
+          firebase.database().ref('/to/'+otheruid).push({
+            content:messageContent,
+            title:subject,
+            from:uid,
+            fromemail:email
+          });
+          firebase.database().ref('/from/'+uid).push({
+            content:messageContent,
+            title:subject,
+            to:otheruid,
+            toemail:messageEmail
+          });
+          console.log("Done updating message database.")
         });
         return false;
       }
