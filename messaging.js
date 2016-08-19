@@ -42,12 +42,17 @@ function sendMessage() {
         return false;
       }
       function attachMessageListener() {
+           console.log("Attaching listener");
            var messagesRef = firebase.database().ref('messages/to/' + uid);
            messagesRef.on('child_added', function(data) {
-           addMessageElement(data.key, data.val().title, data.val().content, data.val().fromemail);
+                console.log("Calling element add");
+                addMessageElement(data.key, data.val().title, data.val().content, data.val().fromemail);
+                console.log("Done calling add");
            });
+           console.log("Listener attached");
       }
       function addMessageElement(thekey, thetitle, thecontent, fromtheemail) {
+             console.log("Creating new message element");
              var para = document.createElement("P");
              var para2 = document.createElement("P");
              var para3 = document.createElement("P");
@@ -60,6 +65,7 @@ function sendMessage() {
              var contentText = document.createTextNode(thecontent);
              para3.appendChild(contentText);
              document.getElementById("messages").appendChild(para3);
+             console.log("Done");
       }
       
       
