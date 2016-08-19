@@ -41,3 +41,27 @@ function sendMessage() {
         });
         return false;
       }
+      function attachMessageListener() {
+           var messagesRef = firebase.database().ref('messages/to/' + uid);
+           messagesRef.on('child_added', function(data) {
+           addMessageElement(data.key, data.val().title, data.val().content, data.val().fromemail);
+});
+   
+      }
+      function addMessageElement(thekey, thetitle, thecontent, fromtheemail) {
+             var para = document.createElement("P");
+             var para2 = document.createElement("P");
+             var para3 = document.createElement("P");
+             var fromText = document.createTextNode(fromtheemail);
+             para.appendChild(fromText);
+             document.getElementById("messages").appendChild(para);  
+             var titleText = document.createTextNode(thetitle);      
+             para2.appendChild(titleText);
+             document.getElementById("messages").appendChild(para2);  
+             var contentText = document.createTextNode(thecontent);
+             para3.appendChild(contentText);
+             document.getElementById("messages").appendChild(para3);
+      }
+      
+      
+      attachMessageListener();
