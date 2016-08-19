@@ -30,21 +30,12 @@ function sendMessage() {
             toemail:messageEmail
           };
           var uniquekey = firebase.database().ref('/to/'+otheruid).push().key;
-          firebase.database().ref('/to/'+otheruid).update(pushData,new function(error) {
-              if(error == null) {
-                      
-              } else {
-                      alert(error);
-              }
-          });
-          firebase.database().ref('/from/'+uid+"/"+uniquekey).update(pushData2,new function(error) {
-              if(error == null) {
-                      
-              } else {
-                      alert(error);
-              }
-          });
-          console.log("Done updating message database.")
+          console.log("Unique key generated");
+          firebase.database().ref('/to/'+otheruid+"/"+uniquekey).update(pushData);
+          console.log("To generated successfully");
+          firebase.database().ref('/from/'+uid+"/"+uniquekey).update(pushData2);
+          console.log("From generated successfully");
+          console.log("Done updating message database.");
         });
         return false;
       }
