@@ -48,11 +48,11 @@
           Not Signed In!
         </div>
         <div id="new_message">
-          <form id="message_form" method="send_message()">
-            <input type="email" hint="email" name="to" required>
-            <input type="text" hint="subject" name="title" required>
-            <input type="paragraph" name="content" hint="Enter message here" required>
-            <input type="submit" name="submit" id="submit">
+          <form id="message_form" method="GET" action="send_message()" autocomplete="off">
+            <input type="email" value="email" name="to" required><br />
+            <input type="text" value="subject" name="title" required><br />
+            <input type="paragraph" name="content" value="Enter message here" required><br />
+            <input type="submit" name="submit" id="submit" value="Submit">
           </form>
         </div>
       </div>
