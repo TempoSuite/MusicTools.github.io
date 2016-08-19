@@ -45,8 +45,7 @@ function sendMessage() {
            var messagesRef = firebase.database().ref('messages/to/' + uid);
            messagesRef.on('child_added', function(data) {
            addMessageElement(data.key, data.val().title, data.val().content, data.val().fromemail);
-});
-   
+           });
       }
       function addMessageElement(thekey, thetitle, thecontent, fromtheemail) {
              var para = document.createElement("P");
