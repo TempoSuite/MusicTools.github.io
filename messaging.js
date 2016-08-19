@@ -22,14 +22,21 @@ function sendMessage() {
             title:subject,
             from:uid,
             fromemail:email
-          });
+          },handleError(error));
           firebase.database().ref('/from/'+uid).push({
             content:messageContent,
             title:subject,
             to:otheruid,
             toemail:messageEmail
-          });
+          },handleError(error));
           console.log("Done updating message database.")
         });
         return false;
+      }
+      function handleError(error) {
+              if(error == null) {
+                      return;
+              } else {
+                      alert(error);
+              }
       }
