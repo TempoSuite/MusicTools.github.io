@@ -78,6 +78,13 @@
         alert(messageEmail);
         alert(subject);
         alert(messageContent);
+        var punctuationless = email.replace(/['!"#$%&\\'()\*+,\-\.\/:;<=>?@\[\\\]\^_`{|}‌​~']/g,"");
+var     messageEmailWithoutPunctuation = punctuationless.replace(/\s{2,}/g,"");
+        var userId = firebase.auth().currentUser.uid;
+        firebase.database().ref('/publicusers/' + messageEmailWithoutPunctuation).once('value').then(function(snapshot) {
+          var uid = snapshot.val().uid;
+          alert(uid);
+        });
       }
     </script>
     <script src="account.js"></script>
