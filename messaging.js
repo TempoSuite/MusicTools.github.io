@@ -3,6 +3,7 @@ function sendMessage() {
         var messageEmail = document.getElementById("message_email").value;
         var subject = document.getElementById("subject").value;
         var messageContent = document.getElementById("message_content").value;
+        var messagePreview = messageContent.substring(0,35);
         //alert(messageEmail);
         //alert(subject);
         //alert(messageContent);
@@ -21,13 +22,15 @@ function sendMessage() {
             content:messageContent,
             title:subject,
             from:uid,
-            fromemail:email
+            fromemail:email,
+            messagepreview:messagePreview
           };
           var pushData2 = {
             content:messageContent,
             title:subject,
             to:otheruid,
-            toemail:messageEmail
+            toemail:messageEmail,
+            messagepreview:messagePreview
           };
           var uniquekey = firebase.database().ref('messages/to/'+otheruid).push().key;
           console.log("Unique key generated");
@@ -48,7 +51,7 @@ function sendMessage() {
                     console.log("Data is null!");
                 }
                 console.log("Calling element add");
-                addMessageElement(data.key, data.val().title, data.val().content, data.val().fromemail);
+                addMessageElement(data.key, data.val().title, data.val().content, data.val().fromemail, data.val().contentpreview);
                 console.log("Done calling add");
            },function (errorObject) {
                 logError("The read failed: " + errorObject.code+" stack: "+errorObject);
@@ -56,8 +59,9 @@ function sendMessage() {
            });
            console.log("Listener attached");
       }
-      function addMessageElement(thekey, thetitle, thecontent, fromtheemail) {
+      function addMessageElement(thekey, thetitle, thecontent, fromtheemail, thecontentpreview) {
              console.log("Creating new message element");
+             alert(thekey);
              var para = document.createElement("div");
              var para2 = document.createElement("div");
              var para3 = document.createElement("div");
@@ -68,9 +72,13 @@ function sendMessage() {
              var titleText = document.createTextNode(thetitle);      
              para2.appendChild(titleText);
              final.appendChild(para2);  
-             var contentText = document.createTextNode(thecontent);
+             var contentText = document.createTextNode(thecontentpreview);
              para3.appendChild(contentText);
              final.appendChild(para3);
              document.getElementById("messages").appendChild(final);
              console.log("Done");
+             addBigMessage(thetitle,thecontent,fromtheemail);
       }
+        function addBigMessage(letitle,lecontent,leemail) {
+                console.log("Adding big message...");
+        }
