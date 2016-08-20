@@ -78,7 +78,7 @@ button {
   left:50px;
   right:50px;
   bottom:70px;
-  background-color:#eee;
+  background-color:#cccccc;
 }
 .fromEmail {
   color:#000;
@@ -91,15 +91,18 @@ button {
 }
 .emailDiv {
   border-bottom:1px solid black;
+  padding:3px;
+  padding-left:10px;
 }
 .subjectDiv {
   border-bottom:1px solid black;
+  padding:10px
 }
 .contentDiv {
-  
+  padding:10px
 }
 .headerDiv {
-  background-color:#333;
+  background-color:#001E4D;
   color:white;
   padding:13px;
 }
