@@ -72,9 +72,6 @@ button {
 #messages > div:hover {
   background-color:#fff;
 }
-#bigMessages > div {
-  background-color:#eee;
-}
 .bigMessage {
   position: fixed;
   top:70px;
@@ -82,6 +79,7 @@ button {
   left:auto;
   right:auto;
   bottom:70px;
+  background-color:#eee;
 }
 .fromEmail {
   color:#000;
