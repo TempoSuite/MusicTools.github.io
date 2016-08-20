@@ -136,7 +136,7 @@ button {
 }
 #submit {
   padding:10px;
-  background-color:#001E8D;
+  background-color:#001E4D;
   color:white;
   -webkit-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4);
   -moz-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4);
@@ -149,4 +149,34 @@ button {
   position:absolute;
   left:0px;
   bottom:0px;
+}
+#message_header {
+  padding:13px;
+  background-color:#001E4D;
+  color:white;
+}
+#message_header > img {
+  float:right;
+}
+#second_toolbar {
+  padding:15px;
+  width:100%;
+  height:95px;
+  background-color:#001E7D;
+  -webkit-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4);
+  -moz-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4);
+  box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4);
+  color:white;
+  font-family: 'Roboto', sans-serif;
+  font-weight:300;
+  text-align:left;
+  font-size:19px;
+}
+#second_toolbar > button {
+  float:right;
+  background-color:#eee;
+  color:#001E8D;
+}
+#second_toolbar > button:hover {
+  background-color:#fff;
 }
