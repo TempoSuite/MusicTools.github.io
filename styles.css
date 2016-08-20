@@ -119,25 +119,27 @@ button {
   right:50px;
   display:none;
 }
-#new_message > form > input {
+#new_message > form > input[type=text],input[type=email] {
   width:100%;
   border:none;
   margin:0;
-  border-bottom:1px solid black;
-  font-family:'Roboto',sans-serif;
-  font-weight:400;
+  border-bottom:1px solid rgba(0,0,0,0.4);
+  font-family:'Roboto', sans-serif;
   font-size:15px;
+  background-color:#ccc;
 }
 #new_message > form > textarea {
   border:none;
   margin:0;
   position:absolute;
-  top:116px;
-  width:100%;
+  //width:100%;
   margin-left:0px;
   left:0px;
-  bottom:10px;
+  bottom:0px;
+  top:116px;
   resize:none;
+  height:auto;
+  background-color:#ccc;
 }
 #message_email {
   padding:5px;
@@ -165,6 +167,7 @@ button {
   position:absolute;
   left:0px;
   bottom:0px;
+  width:100%;
 }
 #message_header {
   padding:13px;
