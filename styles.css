@@ -133,6 +133,7 @@ button {
   width:100%;
   margin-left:0px;
   left:0px;
+  bottom:100px;
 }
 #message_email {
   padding:5px;
