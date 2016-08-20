@@ -58,9 +58,9 @@ function sendMessage() {
       }
       function addMessageElement(thekey, thetitle, thecontent, fromtheemail) {
              console.log("Creating new message element");
-             var para = document.createElement("P");
-             var para2 = document.createElement("P");
-             var para3 = document.createElement("P");
+             var para = document.createElement("div");
+             var para2 = document.createElement("div");
+             var para3 = document.createElement("div");
              var fromText = document.createTextNode(fromtheemail);
              para.appendChild(fromText);
              document.getElementById("messages").appendChild(para);  
