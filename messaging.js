@@ -86,36 +86,24 @@ function sendMessage() {
         function addBigMessage(lekey,letitle,lecontent,leemail) {
                 console.log("Adding big message...");
                 var messageElement = document.createElement("div");
-                var styleAttribute = document.createAttribute("style");
-                var classAttribute = document.createAttribute("class");
-                var idAttribute = document.createAttribute("id");
-                styleAttribute.value="display:none;";
-                classAttribute.value="bigMessage";
-                idAttribute.value=lekey;
-                messageElement.setAttributeNode(styleAttribute);
-                messageElement.setAttributeNode(classAttribute);
-                messageElement.setAttributeNode(idAttribute);
+                messageElement.setAttribute("style","display:none");
+                messageElement.setAttribute("class","bigMessage");
+                messageElement.setAttribute("id",lekey);
                 //create email div
                         var emailDiv = document.createElement("div");
-                        var classAttribute2 = document.createAttribute("class");
-                        classAttribute2.value="emailDiv";
-                        emailDiv.setAttributeNode(classAttribute2);
+                        emailDiv.setAttribute("class","emailDiv");
                         var emailTextText = document.createTextNode(leemail);
                         emailDiv.appendChild(emailTextText);
                     messageElement.appendChild(emailDiv);
                 //create subject div
                         var subjectDiv = document.createElement("div");
-                        var classAttribute3 = document.createAttribute("class");
-                        classAttribute3.value="subjectDiv";
-                        subjectDiv.setAttributeNode(classAttribute3);
+                        subjectDiv.setAttribute("class","subjectDiv");
                         var subjectTextText = document.createTextNode(letitle);
                         subjectDiv.appendChild(subjectTextText);
                     messageElement.appendChild(subjectDiv);
                 //create content div
                         var contentDiv = document.createElement("div");
-                        var classAttribute4 = document.createAttribute("class");
-                        classAttribute4.value="contentDiv";
-                        contentDiv.setAttributeNode(classAttribute4);
+                        contentDiv.setAttribute("class","contentDiv");
                         var contentTextText = document.createTextNode(lecontent);
                         contentDiv.appendChild(contentTextText);
                     messageElement.appendChild(contentDiv);
