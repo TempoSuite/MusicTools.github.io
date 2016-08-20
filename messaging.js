@@ -50,6 +50,8 @@ function sendMessage() {
                 console.log("Calling element add");
                 addMessageElement(data.key, data.val().title, data.val().content, data.val().fromemail);
                 console.log("Done calling add");
+           },function (errorObject) {
+                console.log("The read failed: " + errorObject.code);
            });
            console.log("Listener attached");
       }
