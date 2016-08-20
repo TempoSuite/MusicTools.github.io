@@ -89,7 +89,7 @@ function sendMessage() {
                 var styleAttribute = document.createAttribute("style");
                 var classAttribute = document.createAttribute("class");
                 var idAttribute = document.createAttribute("id");
-                //styleAttribute.value="display:none;";
+                styleAttribute.value="display:none;";
                 classAttribute.value="bigMessage";
                 idAttribute.value=lekey;
                 messageElement.setAttributeNode(styleAttribute);
