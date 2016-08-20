@@ -87,9 +87,23 @@ function sendMessage() {
         function addBigMessage(lekey,letitle,lecontent,leemail) {
                 console.log("Adding big message...");
                 var messageElement = document.createElement("div");
-                messageElement.setAttribute("style","display:none");
-                messageElement.setAttribute("class","bigMessage");
-                messageElement.setAttribute("id",lekey);
+                //add attributes
+                    messageElement.setAttribute("style","display:none");
+                    messageElement.setAttribute("class","bigMessage");
+                    messageElement.setAttribute("id",lekey);
+                //create header div
+                        var headerDiv = document.createElement("div");
+                        headerDiv.setAttribute("class","headerDiv");
+                        //create children elements
+                                var messageText = document.createTextNode("Message");
+                                var closeImage = document.createElement("img");
+                                //add img attributes
+                                    closeImage.setAttribute("src",""); //TODO add src
+                                    closeImage.setAttribute("onClick","closeMessage('"+lekey+"')");
+                                    closeImage.setAttribute("width","50");
+                            headerDiv.appendChild(messageText);
+                            headerDiv.appendChild(closeImage);
+                    messageElement.appendChild(headerDiv);
                 //create email div
                         var emailDiv = document.createElement("div");
                         emailDiv.setAttribute("class","emailDiv");
@@ -114,4 +128,7 @@ function sendMessage() {
         }
         function openMessage(messageKey) {
                 document.getElementById(""+messageKey).style.display = "block";
+        }
+        function closeMessage(messageKey) {
+                document.getElementById(""+messageKey).style.display = "none";
         }
