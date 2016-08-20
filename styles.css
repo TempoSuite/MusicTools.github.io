@@ -66,13 +66,17 @@ button {
 #messages > div {
   background-color:#ddd;
   border-bottom:1px solid black;
+  padding:7px;
+}
+#bigMessages {
+  background-color:#eee;
 }
 .bigMessage {
   position: fixed;
   top:70px;
   width:90%;
-  margin-left:auto;
-  margin-right:auto;
+  left:auto;
+  right:auto;
   bottom:70px;
 }
 .fromEmail {
@@ -91,7 +95,7 @@ button {
   border-bottom:1px solid black;
 }
 .contentDiv {
-  border-bottom:1px solid black;
+  
 }
 .headerDiv {
   background-color:#333;
