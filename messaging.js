@@ -124,5 +124,5 @@ function sendMessage() {
             console.log("Done creating big message element");
         }
         function openMessage(messageKey) {
-                document.getElementById(messageKey).style.display = "block";
+                document.getElementById(""+messageKey).style.display = "block";
         }
