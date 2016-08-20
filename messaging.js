@@ -132,3 +132,9 @@ function sendMessage() {
         function closeMessage(messageKey) {
                 document.getElementById(""+messageKey).style.display = "none";
         }
+        function openNewMessage() {
+                document.getElementById("new_message").style.display = "block";
+        }
+        function closeNewMessage() {
+                document.getElementById("new_message").style.display = "none";
+        }
