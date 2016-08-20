@@ -117,6 +117,7 @@ button {
   bottom:70px;
   left:50px;
   right:50px;
+  display:none;
 }
 #new_message > form > input {
   width:100%;
