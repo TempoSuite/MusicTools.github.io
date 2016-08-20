@@ -75,9 +75,8 @@ button {
 .bigMessage {
   position: fixed;
   top:70px;
-  width:90%;
-  left:auto;
-  right:auto;
+  left:50px;
+  right:50px;
   bottom:70px;
   background-color:#eee;
 }
