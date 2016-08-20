@@ -68,7 +68,7 @@ button {
   border-bottom:1px solid black;
   padding:7px;
 }
-#bigMessages {
+#bigMessages > div {
   background-color:#eee;
 }
 .bigMessage {
