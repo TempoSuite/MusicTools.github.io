@@ -139,6 +139,8 @@ button {
 }
 #message_content {
   padding:10px;
+  font-family: 'Roboto', sans-serif;
+  bottom:100px;
 }
 #submit {
   padding:10px;
