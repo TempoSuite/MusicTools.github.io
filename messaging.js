@@ -53,6 +53,7 @@ function sendMessage() {
                 console.log("Calling element add");
                 addMessageElement(data.key, data.val().title, data.val().content, data.val().fromemail, data.val().messagepreview);
                 console.log("Done calling add");
+                console.log("Message preview: "+data.val().messagepreview);
            },function (errorObject) {
                 logError("The read failed: " + errorObject.code+" stack: "+errorObject);
                 displayError(errorObject.code);
@@ -62,9 +63,9 @@ function sendMessage() {
       function addMessageElement(thekey, thetitle, thecontent, fromtheemail, thecontentpreview) {
              console.log("Creating new message element");
              alert(thekey);
-             var para = document.createElement("div");
-             var para2 = document.createElement("div");
-             var para3 = document.createElement("div");
+             var para = document.createElement("span");
+             var para2 = document.createElement("span");
+             var para3 = document.createElement("span");
              var fromText = document.createTextNode(fromtheemail);
              var final = document.createElement("div");
              para.appendChild(fromText);
