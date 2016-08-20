@@ -123,7 +123,7 @@ function sendMessage() {
                         contentDiv.appendChild(contentTextText);
                     messageElement.appendChild(contentDiv);
             //add message to document
-            document.getElementById("messages").appendChild(messageElement);
+            document.getElementById("bigmessages").appendChild(messageElement);
             console.log("Done creating big message element");
         }
         function openMessage(messageKey) {
