@@ -75,3 +75,21 @@ button {
   margin-right:auto;
   bottom:70px;
 }
+.fromEmail {
+  color:#000;
+}
+.subjectPreview {
+  color:#000;
+}
+.contentPreview {
+  color:#555;
+}
+.emailDiv {
+  border-bottom:1px solid black;
+}
+.subjectDiv {
+  border-bottom:1px solid black;
+}
+.contentDiv {
+  border-bottom:1px solid black;
+}
