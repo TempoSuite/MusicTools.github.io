@@ -3,9 +3,9 @@ function sendMessage() {
         var messageEmail = document.getElementById("message_email").value;
         var subject = document.getElementById("subject").value;
         var messageContent = document.getElementById("message_content").value;
-        alert(messageEmail);
-        alert(subject);
-        alert(messageContent);
+        //alert(messageEmail);
+        //alert(subject);
+        //alert(messageContent);
         var punctuationless = messageEmail.replace(/['!"#$%&\\'()\*+,\-\.\/:;<=>?@\[\\\]\^_`{|}‌​~']/g,"");
         var messageEmailWithoutPunctuation = punctuationless.replace(/\s{2,}/g,"");
         var userId = firebase.auth().currentUser.uid;
@@ -13,7 +13,7 @@ function sendMessage() {
           if(snapshot.val() != null) {
             var otheruid = snapshot.val().uid;
           } else {
-            alert("The email address you entered is not registered with MusicTools.");
+            displayError("The email address you entered is not registered with MusicTools.");
             return false;
           }
           console.log("Updating message database...");
@@ -51,7 +51,8 @@ function sendMessage() {
                 addMessageElement(data.key, data.val().title, data.val().content, data.val().fromemail);
                 console.log("Done calling add");
            },function (errorObject) {
-                console.log("The read failed: " + errorObject.code+" stack: "+errorObject);
+                logError("The read failed: " + errorObject.code+" stack: "+errorObject);
+                displayError(errorObject.code);
            });
            console.log("Listener attached");
       }
