@@ -125,6 +125,11 @@ button {
   margin:0;
   border-bottom:1px solid black;
 }
+#new_message > form > textarea {
+  width:100%;
+  border:none;
+  margin:0;
+}
 #message_email {
   padding:5px;
   padding-left:10px;
