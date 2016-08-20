@@ -61,6 +61,7 @@ function sendMessage() {
            console.log("Listener attached");
       }
       function addMessageElement(thekey, thetitle, thecontent, fromtheemail, thecontentpreview) {
+              alert(thecontent);
              console.log("Creating new message element");
              //alert(thekey);
              var para = document.createElement("span");
