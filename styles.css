@@ -126,9 +126,13 @@ button {
   border-bottom:1px solid black;
 }
 #new_message > form > textarea {
-  width:100%;
   border:none;
   margin:0;
+  position:absolute;
+  top:112px;
+  width:10%;
+  margin-left:0px;
+  left:0px;
 }
 #message_email {
   padding:5px;
@@ -140,7 +144,6 @@ button {
 #message_content {
   padding:10px;
   font-family: 'Roboto', sans-serif;
-  bottom:100px;
 }
 #submit {
   padding:10px;
