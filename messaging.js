@@ -44,6 +44,9 @@ function sendMessage() {
            console.log("Attaching listener to messages/to/"+uid);
            var messagesRef = firebase.database().ref('messages/to/' + uid);
            messagesRef.on('child_added', function(data) {
+                if(data == null) {
+                    console.log("Data is null!");
+                }
                 console.log("Calling element add");
                 addMessageElement(data.key, data.val().title, data.val().content, data.val().fromemail);
                 console.log("Done calling add");
