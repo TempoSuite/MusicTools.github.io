@@ -110,3 +110,43 @@ button {
   float:right;
   vertical-align:middle;
 }
+#new_message {
+  background-color:#ccc;
+  position:absolute;
+  top:70px;
+  bottom:70px;
+  left:50px;
+  right:50px;
+}
+#new_message > form > input {
+  width:100%;
+  border:none;
+  margin:0;
+  border-bottom:1px solid black;
+}
+#message_email {
+  padding:5px;
+  padding-left:10px;
+}
+#subject {
+  padding:10px;
+}
+#message_content {
+  padding:10px;
+}
+#submit {
+  padding:10px;
+  background-color:#001E8D;
+  color:white;
+  -webkit-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4);
+  -moz-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4);
+  box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4);
+  border:none;
+  font-family: 'Roboto', sans-serif;
+  font-weight:bold;
+  cursor:pointer;
+  text-transform:uppercase;
+  position:absolute;
+  left:0px;
+  bottom:0px;
+}
