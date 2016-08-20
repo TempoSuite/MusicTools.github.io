@@ -100,7 +100,7 @@ function sendMessage() {
                                 //add img attributes
                                     closeImage.setAttribute("src",""); //TODO add src
                                     closeImage.setAttribute("onClick","closeMessage('"+lekey+"')");
-                                    closeImage.setAttribute("width","50");
+                                    closeImage.setAttribute("width","25px");
                             headerDiv.appendChild(messageText);
                             headerDiv.appendChild(closeImage);
                     messageElement.appendChild(headerDiv);
