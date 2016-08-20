@@ -51,7 +51,7 @@ function sendMessage() {
                     console.log("Data is null!");
                 }
                 console.log("Calling element add");
-                addMessageElement(data.key, data.val().title, data.val().content, data.val().fromemail, data.val().contentpreview);
+                addMessageElement(data.key, data.val().title, data.val().content, data.val().fromemail, data.val().messagepreview);
                 console.log("Done calling add");
            },function (errorObject) {
                 logError("The read failed: " + errorObject.code+" stack: "+errorObject);
