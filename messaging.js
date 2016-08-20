@@ -62,13 +62,15 @@ function sendMessage() {
              var para2 = document.createElement("div");
              var para3 = document.createElement("div");
              var fromText = document.createTextNode(fromtheemail);
+             var final = document.createElement("div");
              para.appendChild(fromText);
-             document.getElementById("messages").appendChild(para);  
+             final.appendChild(para);  
              var titleText = document.createTextNode(thetitle);      
              para2.appendChild(titleText);
-             document.getElementById("messages").appendChild(para2);  
+             final.appendChild(para2);  
              var contentText = document.createTextNode(thecontent);
              para3.appendChild(contentText);
-             document.getElementById("messages").appendChild(para3);
+             final.appendChild(para3);
+             document.getElementById("messages").appendChild(final);
              console.log("Done");
       }
