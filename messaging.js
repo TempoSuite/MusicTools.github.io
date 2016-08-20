@@ -66,7 +66,7 @@ function sendMessage() {
              var para = document.createElement("span");
              var para2 = document.createElement("span");
              var para3 = document.createElement("span");
-             var fromText = document.createTextNode(fromtheemail+" ");
+             var fromText = document.createTextNode(fromtheemail+" ---- ");
              var final = document.createElement("div");
              final.setAttribute("onClick","openMessage('"+thekey+"')");
              para.appendChild(fromText);
