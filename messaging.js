@@ -98,7 +98,7 @@ function sendMessage() {
                                 var messageText = document.createTextNode("Message");
                                 var closeImage = document.createElement("img");
                                 //add img attributes
-                                    closeImage.setAttribute("src",""); //TODO add src
+                                    closeImage.setAttribute("src","x.svg"); //TODO add src
                                     closeImage.setAttribute("onClick","closeMessage('"+lekey+"')");
                                     closeImage.setAttribute("width","25px");
                             headerDiv.appendChild(messageText);
