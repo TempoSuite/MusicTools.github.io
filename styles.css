@@ -67,3 +67,11 @@ button {
   background-color:#ddd;
   border-bottom:1px solid black;
 }
+.bigMessage {
+  position: fixed;
+  top:70px;
+  width:90%;
+  margin-left:auto;
+  margin-right:auto;
+  bottom:70px;
+}
