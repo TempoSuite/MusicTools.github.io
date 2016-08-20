@@ -44,11 +44,16 @@
         </a>
       </header>
       <div id="content">
+        <div id="second_toolbar">
+          Messages
+          <button onClick="openNewMessage()" id="compose">Compose New Message</button>
+        </div>
         <div id="error_container"></div>
         <div id="messages"></div>
         <div id="bigmessages"></div>
         <div id="new_message">
           <form id="message_form" onsubmit="return sendMessage()" autocomplete="off">
+            <div id="message_header">New Message <img src="" width="25px" onClick="closeNewMessage()"/></div>
             <input type="email" value="email" name="to" id="message_email" required><br />
             <input type="text" value="subject" name="title" id="subject" required><br />
             <input type="paragraph" name="content" value="Enter message here" id="message_content" required><br />
