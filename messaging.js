@@ -1,4 +1,5 @@
 function sendMessage() {
+        closeNewMessage();
         console.log("Sending message...");
         var messageEmail = document.getElementById("message_email").value;
         var subject = document.getElementById("subject").value;
