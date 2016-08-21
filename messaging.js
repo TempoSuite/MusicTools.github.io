@@ -120,8 +120,13 @@ function sendMessage() {
                 //create content div
                         var contentDiv = document.createElement("div");
                         contentDiv.setAttribute("class","contentDiv");
-                        var contentTextText = document.createTextNode(lecontent);
-                        contentDiv.appendChild(contentTextText);
+                        var lineBreaks = lecontent.split("\n");
+                        for(i=0,i<lineBreaks.length,i++) {
+                            contentDiv.appendChild(createTextNode(lineBreaks[i]));
+                            contentDiv.appendChild(createElement("br"));
+                        }
+                        //var contentTextText = document.createTextNode(lecontent);
+                        //contentDiv.appendChild(contentTextText);
                     messageElement.appendChild(contentDiv);
             //add message to document
             document.getElementById("bigmessages").appendChild(messageElement);
