@@ -122,8 +122,8 @@ function sendMessage() {
                         contentDiv.setAttribute("class","contentDiv");
                         var lineBreaks = lecontent.split("\n");
                         for(i=0;i<lineBreaks.length;i++) {
-                            contentDiv.appendChild(createTextNode(lineBreaks[i]));
-                            contentDiv.appendChild(createElement("br"));
+                            contentDiv.appendChild(document.createTextNode(lineBreaks[i]));
+                            contentDiv.appendChild(document.createElement("br"));
                         }
                         //var contentTextText = document.createTextNode(lecontent);
                         //contentDiv.appendChild(contentTextText);
