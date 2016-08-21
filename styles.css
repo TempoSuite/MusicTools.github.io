@@ -77,7 +77,7 @@ button {
   top:70px;
   left:50px;
   right:50px;
-  bottom:70px;
+  bottom:0px;
   background-color:#cccccc;
   overflow:scroll;
 }
@@ -116,7 +116,7 @@ button {
   background-color:#ccc;
   position:absolute;
   top:70px;
-  bottom:70px;
+  bottom:0px;
   left:50px;
   right:50px;
   display:none;
