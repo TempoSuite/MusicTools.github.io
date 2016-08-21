@@ -100,6 +100,7 @@ button {
 }
 .contentDiv {
   padding:10px
+  overflow:scroll;
 }
 .headerDiv {
   background-color:#001E4D;
