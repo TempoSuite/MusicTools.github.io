@@ -79,6 +79,7 @@ button {
   right:50px;
   bottom:70px;
   background-color:#cccccc;
+  overflow:scroll;
 }
 .fromEmail {
   color:#000;
