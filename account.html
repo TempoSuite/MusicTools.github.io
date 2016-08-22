@@ -36,7 +36,7 @@
         </a>-->
         <a href="/account">
           <span id="accountimgandname">
-             <span class="larger">|</span> Signed Out
+             <span class="larger"></span> Signed Out
             <img src="ic_account.svg" height="35px" id="accountImage" align="middle"/>
           </span>
         </a>
@@ -86,7 +86,7 @@
         if(email == undefined || email == null || email == "") {
           email == "";
         }
-        document.getElementById("accountimgandname").innerHTML=" <span class='larger'>|</span> "+displayName+" <img src='"+photoURL+"' height='35px' id='accountImage' align='middle' />";
+        document.getElementById("accountimgandname").innerHTML=" <span class='larger'></span> "+displayName+" <img src='"+photoURL+"' height='35px' id='accountImage' align='middle' />";
         document.getElementById("name").innerHTML = displayName;
         document.getElementById("email").innerHTML = ""+email;
         document.getElementById("image").src = photoURLDark;
