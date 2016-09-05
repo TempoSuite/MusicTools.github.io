@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-Allow: /sitemap.htm
 Sitemap: https://musictools.github.io/sitemap.xml
