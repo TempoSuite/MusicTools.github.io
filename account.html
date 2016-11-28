@@ -15,6 +15,9 @@
       firebase.initializeApp(config);
       var database = firebase.database();
       var storage = firebase.storage();
+      var storage = storage.ref();
+      
+      var masterSignedInBool;
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
@@ -64,6 +67,8 @@
           document.getElementById("delete").style.display="inline";
           document.getElementById("email").style.display="block";
           document.getElementById("name").style.display="block";
+        
+          masterSignedInBool = true;
       }
       function handleSignOut() {
           //alert("Handling sign out2");
@@ -72,6 +77,8 @@
           document.getElementById("delete").style.display="none";
           document.getElementById("email").style.display="none";
           document.getElementById("name").innerHTML = "Signed Out";
+        
+          masterSignedInBool = false;
       }
       function onAuthInit() {
         if(signedOut) {
