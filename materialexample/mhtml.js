@@ -27,7 +27,9 @@ function updateMHTMLObjects() {
     toolbars[i].style.width = "100%";
     toolbars[i].style.backgroundColor = materialAccentColor;
     toolbars[i].style.color = materialTextColor;
+    toolbars[i].innerHTML = toolbarText;
     
+    alert("Material Styles Added");
   }
 }
 updateMHTMLObjects();
