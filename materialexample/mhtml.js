@@ -1,5 +1,5 @@
 //Copyright 2016 Matthew Whitaker/Sub 6 Resources
-funtion toolbar(title, color) {
+function toolbar(title, color) {
   
 }
 function updateMHTMLObjects() {
