@@ -42,12 +42,14 @@
         </a>
       </header>
       <div id="content">
+        <center>
         <img src="ic_account_dark.svg" width="100px" id="image"/>
         <span id="name" style="font-weight:bold; font-size:30px;">Logged Out</span><br />
         <span id="email"></span><br />
         <button onClick="signIn()" id="signin" style="display:none;">Sign In</button>
         <button onClick="signOut()" id="signout" style="display:none;">Sign Out</button>
         <button onClick="accountDelete()" id="delete" style="display:none;">Delete Account</button>
+        </center>
       </div>  
       <footer>
         &copy; Sub 6 Resources 2016
@@ -55,7 +57,7 @@
     </div>
     <script>
       function handleSignIn() {
-          alert("Handling sign in2");
+          //alert("Handling sign in2");
           document.getElementById("signin").style.display="none";
           document.getElementById("signout").style.display="inline";
           document.getElementById("delete").style.display="inline";
@@ -63,7 +65,7 @@
           document.getElementById("name").style.display="block";
       }
       function handleSignOut() {
-          alert("Handling sign out2");
+          //alert("Handling sign out2");
           document.getElementById("signin").style.display="inline";
           document.getElementById("signout").style.display="none";
           document.getElementById("delete").style.display="none";
