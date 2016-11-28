@@ -47,7 +47,7 @@
       </header>
       <div id="content">
         <center>
-        <img src="ic_account_dark.svg" width="100px" id="image"/><br />
+        <img src="ic_account_dark.svg" width="100px" id="image" onClick="updateImage()" style="cursor:hand;"/><br />
         <span id="name" style="font-weight:bold; font-size:30px;">Signed Out</span><br />
         <span id="email"></span><br />
         <button onClick="signIn()" id="signin" style="display:none;">Sign In</button>
@@ -105,6 +105,9 @@
         if(document.getElementById("email").innerHTML == "undefined") {
           document.getElementById("email").innerHTML = "";
         }
+      }
+      function updateImage() {
+        alert("UPDATE IMAGE FLOW STARTED");
       }
     </script>
     <script src="account.js"></script>
