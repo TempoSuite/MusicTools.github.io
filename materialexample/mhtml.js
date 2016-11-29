@@ -28,6 +28,7 @@ function updateMHTMLObjects() {
     var iconTen = toolbars[i].getAttribute("iconTenURL");
     
     var toolbarChildDiv = document.createElement("div");
+    toolbarChildDiv.style.width="100%";
     var toolbarText = document.createElement("span");
     toolbars[i].innerHTML = "";
     toolbarText.style.color = materialTextColor;
