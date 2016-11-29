@@ -5,6 +5,7 @@ function toolbar(title, color) {
 function updateMHTMLObjects() {
   document.getElementsByTagName("body")[0].style.padding = "0";
   document.getElementsByTagName("body")[0].style.margin = "0";
+  document.getElementsByTagName("body")[0].style.boxSizing = "border-box";
   
   var toolbars = document.getElementsByTagName("toolbar");
   var contents = document.getElementsByTagName("content");
