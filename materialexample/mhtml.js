@@ -26,6 +26,7 @@ function updateMHTMLObjects() {
   //Iterate through all toolbars and convert them to cool-looking toolbars!!!
   for(i = 0; i < toolbars.length; i++) {
     var toolbarTextText = toolbars[i].getAttribute("title");
+    var icon = toolbars[i].getAttribute("iconURL");
     var iconOne = toolbars[i].getAttribute("iconOneURL");
     var iconTwo = toolbars[i].getAttribute("iconTwoURL");
     var iconThree = toolbars[i].getAttribute("iconThreeURL");
@@ -37,7 +38,7 @@ function updateMHTMLObjects() {
     var iconNine = toolbars[i].getAttribute("iconNineURL");
     var iconTen = toolbars[i].getAttribute("iconTenURL");
     
-    toolbars[i].innerHTML = '<div style="width:100%; box-sizing: border-box; background-color:'+materialAccentColor+'; color:'+materialTextColor+'; font-family: \'Roboto\', sans-serif; font-weight:400; font-size: 18px; padding:21px; -webkit-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4); -moz-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4); box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4); position:fixed; top:0;">'+toolbarTextText+'</div>';
+    toolbars[i].innerHTML = '<div style="width:100%; box-sizing: border-box; background-color:'+materialAccentColor+'; color:'+materialTextColor+'; font-family: \'Roboto\', sans-serif; font-weight:400; font-size: 18px; padding:21px; -webkit-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4); -moz-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4); box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4); position:fixed; top:0;"><img src="'+icon+'" style="height:18px; width:18px;" />'+toolbarTextText+'</div>';
     
     //alert("Material Styles Added");
   }
