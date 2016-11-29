@@ -33,7 +33,7 @@ function updateMHTMLObjects() {
     //alert("Material Styles Added");
   }
   for(i = 0; i < copyrights.length; i++) {
-    copyrights[i].innerHTML = "<div style='background-color:"+materialAccentColor+"; font-family: \'Roboto\', sans-serif; font-weight:300; color:"+materialTextColor+"; width:100%; padding:10px; text-align:center'>"+copyrights[i].innerHTML+"</div>";
+    copyrights[i].innerHTML = '<div style="background-color:'+materialAccentColor+'; font-family: \'Roboto\', sans-serif; font-weight:300; color:'+materialTextColor+'; width:100%; padding:10px; text-align:center">'+copyrights[i].innerHTML+"</div>";
   }
 }
 updateMHTMLObjects();
