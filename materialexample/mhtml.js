@@ -26,6 +26,7 @@ function updateMHTMLObjects() {
   //Iterate through all toolbars and convert them to cool-looking toolbars!!!
   for(i = 0; i < toolbars.length; i++) {
     var toolbarTextText = toolbars[i].getAttribute("title");
+    var hamburger = toolbars[i].getAttribute("hamburger");
     var icon = toolbars[i].getAttribute("iconURL");
     var iconOne = toolbars[i].getAttribute("iconOneURL");
     var iconTwo = toolbars[i].getAttribute("iconTwoURL");
@@ -38,11 +39,19 @@ function updateMHTMLObjects() {
     var iconNine = toolbars[i].getAttribute("iconNineURL");
     var iconTen = toolbars[i].getAttribute("iconTenURL");
     
-    toolbars[i].innerHTML = '<div style="width:100%; box-sizing: border-box; background-color:'+materialAccentColor+'; color:'+materialTextColor+'; font-family: \'Roboto\', sans-serif; font-weight:400; font-size: 18px; padding:21px; -webkit-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4); -moz-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4); box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4); position:fixed; top:0;"><img src="'+icon+'" style="vertical-align:middle;" />'+toolbarTextText+'</div>';
+    if(!hamburger) {
+    toolbars[i].innerHTML = '<div style="width:100%; box-sizing: border-box; background-color:'+materialAccentColor+'; color:'+materialTextColor+'; font-family: \'Roboto\', sans-serif; font-weight:400; font-size: 18px; padding:21px; -webkit-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4); -moz-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4); box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4); position:fixed; top:0;">'+toolbarTextText+'</div>';
+    } else {
+    toolbars[i].innerHTML = '<div style="width:100%; box-sizing: border-box; background-color:'+materialAccentColor+'; color:'+materialTextColor+'; font-family: \'Roboto\', sans-serif; font-weight:400; font-size: 18px; padding:21px; -webkit-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4); -moz-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4); box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4); position:fixed; top:0;"><img src="https://musictools.github.io/hamburger.png" onClick="openHamburger()"/>'+toolbarTextText+'</div>';
+    }
     
     //alert("Material Styles Added");
   }
   for(i = 0; i < copyrights.length; i++) {
     copyrights[i].innerHTML = '<div style="background-color:'+materialAccentColor+'; font-family: \'Roboto\', sans-serif; font-weight:300; color:'+materialTextColor+'; width:100%; padding:10px; text-align:center">'+copyrights[i].innerHTML+"</div>";
   }
+}
+
+function openHamburger() {
+  alert("Hamburger button clicked!");
 }
