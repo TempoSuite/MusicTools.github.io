@@ -16,6 +16,9 @@ function updateMHTMLObjects() {
   var materialAccentColor = "#001E8D";
   var materialSecondaryColor = "#002E9D";
   var materialTextColor = "#FFFFFF";
+  for(i = 0; i < contents.length; i++) {
+    contents[i].style.fontFamily = "'Roboto', sans-serif";
+  }
   for(i = 0; i < buttons.length; i++) {
     buttons[i].innerHTML = '<button style="padding:10px; margin:10px; background-color:'+materialAccentColor+'; color:'+materialTextColor+'; -webkit-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4); -moz-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4); box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4); border:none; font-family: \'Roboto\', sans-serif; font-weight:bold; cursor:pointer; text-transform:uppercase;">'+buttons[i].innerHTML+'</button>';
   }
