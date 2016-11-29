@@ -27,25 +27,7 @@ function updateMHTMLObjects() {
     var iconNine = toolbars[i].getAttribute("iconNineURL");
     var iconTen = toolbars[i].getAttribute("iconTenURL");
     
-    var toolbarChildDiv = document.createElement("div");
-    toolbarChildDiv.style.width="100%";
-    var toolbarText = document.createElement("span");
-    toolbars[i].innerHTML = "";
-    toolbarText.style.color = materialTextColor;
-    toolbarText.style.textSize = "30px";
-    toolbarText.style.fontFamily = "'Roboto', sans-serif";
-    toolbarText.style.fontWeight = "100";
-    toolbarText.innerHTML = toolbarTextText;
-    toolbarText.style.width = "100%";
-    toolbarText.style.backgroundColor = materialAccentColor;
-    toolbarText.style.padding = "10px";
-    //TODO add imgs for icons.
-    toolbarChildDiv.appendChild(toolbarText);
-    toolbars[i].appendChild(toolbarChildDiv);
-    toolbars[i].style.width = "100%";
-    toolbars[i].style.backgroundColor = materialAccentColor;
-    toolbars[i].style.color = materialTextColor;
-    toolbars[i].innerHTML = '<div style="width:100%; background-color:'+materialAccentColor+'; color:'+materialTextColor+';">'+toolbarTextText+'</div>';
+    toolbars[i].innerHTML = '<div style="width:100%; background-color:'+materialAccentColor+'; color:'+materialTextColor+'; font-family: \'Roboto\', sans-serif; font-weight:100; text-size: 40px; padding:10px;">'+toolbarTextText+'</div>';
     
     alert("Material Styles Added");
   }
