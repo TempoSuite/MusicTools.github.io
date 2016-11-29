@@ -6,6 +6,7 @@ function updateMHTMLObjects() {
   document.getElementsByTagName("body")[0].style.padding = "0";
   document.getElementsByTagName("body")[0].style.margin = "0";
   document.getElementsByTagName("body")[0].style.boxSizing = "border-box";
+  document.getElementsByTagName("body")[0].style.marginTop = "65px";
   
   var toolbars = document.getElementsByTagName("toolbar");
   var contents = document.getElementsByTagName("content");
