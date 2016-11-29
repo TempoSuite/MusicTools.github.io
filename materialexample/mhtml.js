@@ -12,6 +12,7 @@ function updateMHTMLObjects() {
   var contents = document.getElementsByTagName("content");
   var copyrights = document.getElementsByTagName("copyright");
   var buttons = document.getElementsByTagName("mbutton");
+  var fabs = document.getElementsByTagName("fab");
   var materialBackgroundColor = "#eeeeee";
   var materialSecondaryColor = "#002E9D";
   var materialTextColor = "#FFFFFF";
@@ -42,7 +43,7 @@ function updateMHTMLObjects() {
     if(!hamburger) {
     toolbars[i].innerHTML = '<div style="width:100%; box-sizing: border-box; background-color:'+materialAccentColor+'; color:'+materialTextColor+'; font-family: \'Roboto\', sans-serif; font-weight:400; font-size: 18px; padding:21px; -webkit-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4); -moz-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4); box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4); position:fixed; top:0;">'+toolbarTextText+'</div>';
     } else {
-    toolbars[i].innerHTML = '<div style="width:100%; box-sizing: border-box; background-color:'+materialAccentColor+'; color:'+materialTextColor+'; font-family: \'Roboto\', sans-serif; font-weight:400; font-size: 18px; padding:21px; -webkit-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4); -moz-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4); box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4); position:fixed; top:0;"><img src="https://musictools.github.io/hamburger.svg" style="vertical-align:middle; height:24px; cursor:pointer; padding-left:5px; padding-right:21px;" onClick="openHamburger()"/>'+toolbarTextText+'</div>';
+    toolbars[i].innerHTML = '<div style="width:100%; box-sizing: border-box; background-color:'+materialAccentColor+'; color:'+materialTextColor+'; font-family: \'Roboto\', sans-serif; font-weight:400; font-size: 18px; padding:21px; -webkit-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4); -moz-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4); box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4); position:fixed; top:0;"><img src="https://musictools.github.io/hamburger.svg" style="vertical-align:middle; height:24px; cursor:pointer; padding-left:3px; padding-right:21px;" onClick="openHamburger()"/>'+toolbarTextText+'</div>';
     }
     
     //alert("Material Styles Added");
