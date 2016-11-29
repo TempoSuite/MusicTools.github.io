@@ -6,7 +6,7 @@ function updateMHTMLObjects() {
   document.getElementsByTagName("body")[0].style.padding = "0";
   document.getElementsByTagName("body")[0].style.margin = "0";
   document.getElementsByTagName("body")[0].style.boxSizing = "border-box";
-  document.getElementsByTagName("body")[0].style.marginTop = "56px";
+  document.getElementsByTagName("body")[0].style.marginTop = "60px";
   var materialAccentColor = document.querySelectorAll('[type="accentColor"]')[0].getAttribute("color");
   var toolbars = document.getElementsByTagName("toolbar");
   var contents = document.getElementsByTagName("content");
@@ -35,7 +35,7 @@ function updateMHTMLObjects() {
     var iconNine = toolbars[i].getAttribute("iconNineURL");
     var iconTen = toolbars[i].getAttribute("iconTenURL");
     
-    toolbars[i].innerHTML = '<div style="width:100%; height:56px; box-sizing: border-box; background-color:'+materialAccentColor+'; color:'+materialTextColor+'; font-family: \'Roboto\', sans-serif; font-weight:300; font-size: 18px; padding:15px; -webkit-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4); -moz-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4); box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4); position:fixed; top:0;">'+toolbarTextText+'</div>';
+    toolbars[i].innerHTML = '<div style="width:100%; height:60px; box-sizing: border-box; background-color:'+materialAccentColor+'; color:'+materialTextColor+'; font-family: \'Roboto\', sans-serif; font-weight:300; font-size: 18px; padding:15px; -webkit-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4); -moz-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4); box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4); position:fixed; top:0;">'+toolbarTextText+'</div>';
     
     //alert("Material Styles Added");
   }
