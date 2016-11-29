@@ -28,7 +28,7 @@ function updateMHTMLObjects() {
     var iconNine = toolbars[i].getAttribute("iconNineURL");
     var iconTen = toolbars[i].getAttribute("iconTenURL");
     
-    toolbars[i].innerHTML = '<div style="width:100%; background-color:'+materialAccentColor+'; color:'+materialTextColor+'; font-family: \'Roboto\', sans-serif; font-weight:100; text-size: 40px; padding:10px;">'+toolbarTextText+'</div>';
+    toolbars[i].innerHTML = '<div style="width:100%; height:65px; box-sizing: border-box; background-color:'+materialAccentColor+'; color:'+materialTextColor+'; font-family: \'Roboto\', sans-serif; font-weight:300; font-size: 23px; padding:15px; -webkit-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4); -moz-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4); box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4); position:fixed; top:0;">'+toolbarTextText+'</div>';
     
     alert("Material Styles Added");
   }
