@@ -35,6 +35,9 @@ function updateMHTMLObjects() {
     toolbarText.style.fontFamily = "'Roboto', sans-serif";
     toolbarText.style.fontWeight = "100";
     toolbarText.innerHTML = toolbarTextText;
+    toolbarText.style.width = "100%";
+    toolbarText.style.backgroundColor = materialAccentColor;
+    toolbarText.style.padding = "10px";
     //TODO add imgs for icons.
     toolbarChildDiv.appendChild(toolbarText);
     toolbars[i].appendChild(toolbarChildDiv);
