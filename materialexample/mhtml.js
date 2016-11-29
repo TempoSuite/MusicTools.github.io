@@ -24,6 +24,15 @@ function updateMHTMLObjects() {
     var iconNine = toolbars[i].getAttribute("iconNineURL");
     var iconTen = toolbars[i].getAttribute("iconTenURL");
     
+    var toolbarChildDiv = document.createElement("div");
+    var toolbarText = document.createElement("span");
+    toolbarText.style.color = materialTextColor;
+    toolbarText.style.textSize = "30px";
+    toolbarText.style.fontFamily = "'Roboto', sans-serif";
+    toolbarText.style.fontWeight = "100";
+    //TODO add imgs for icons.
+    toolbarChildDiv.appendChild(toolbarText);
+    toolbars[i].appendChild(toolbarChildDiv);
     toolbars[i].style.width = "100%";
     toolbars[i].style.backgroundColor = materialAccentColor;
     toolbars[i].style.color = materialTextColor;
