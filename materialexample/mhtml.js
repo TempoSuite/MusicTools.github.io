@@ -12,7 +12,7 @@ function updateMHTMLObjects() {
   var materialTextColor = "#EEEEEE";
   //Iterate through all toolbars and convert them to cool-looking toolbars!!!
   for(i = 0; i < toolbars.length; i++) {
-    var toolbarText = toolbars[i].getAttribute("title");
+    var toolbarTextText = toolbars[i].getAttribute("title");
     var iconOne = toolbars[i].getAttribute("iconOneURL");
     var iconTwo = toolbars[i].getAttribute("iconTwoURL");
     var iconThree = toolbars[i].getAttribute("iconThreeURL");
@@ -30,13 +30,13 @@ function updateMHTMLObjects() {
     toolbarText.style.textSize = "30px";
     toolbarText.style.fontFamily = "'Roboto', sans-serif";
     toolbarText.style.fontWeight = "100";
+    toolbarText.innerHTML = toolbarTextText;
     //TODO add imgs for icons.
     toolbarChildDiv.appendChild(toolbarText);
     toolbars[i].appendChild(toolbarChildDiv);
     toolbars[i].style.width = "100%";
     toolbars[i].style.backgroundColor = materialAccentColor;
     toolbars[i].style.color = materialTextColor;
-    toolbars[i].innerHTML = toolbarText;
     
     alert("Material Styles Added");
   }
