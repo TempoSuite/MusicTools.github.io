@@ -44,4 +44,3 @@ function updateMHTMLObjects() {
     copyrights[i].innerHTML = '<div style="background-color:'+materialAccentColor+'; font-family: \'Roboto\', sans-serif; font-weight:300; color:'+materialTextColor+'; width:100%; padding:10px; text-align:center">'+copyrights[i].innerHTML+"</div>";
   }
 }
-updateMHTMLObjects();
