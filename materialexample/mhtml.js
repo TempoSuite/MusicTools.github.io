@@ -45,6 +45,7 @@ function updateMHTMLObjects() {
     toolbars[i].style.width = "100%";
     toolbars[i].style.backgroundColor = materialAccentColor;
     toolbars[i].style.color = materialTextColor;
+    toolbars[i].innerHTML = '<div style="width:100%; background-color:'+materialAccentColor+'; color:'+materialTextColor+';">'+toolbarTextText+'</div>';
     
     alert("Material Styles Added");
   }
