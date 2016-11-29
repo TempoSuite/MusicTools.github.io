@@ -13,7 +13,6 @@ function updateMHTMLObjects() {
   var copyrights = document.getElementsByTagName("copyright");
   var buttons = document.getElementsByTagName("mbutton");
   var materialBackgroundColor = "#eeeeee";
-  var materialAccentColor = "#001E8D";
   var materialSecondaryColor = "#002E9D";
   var materialTextColor = "#FFFFFF";
   for(i = 0; i < contents.length; i++) {
