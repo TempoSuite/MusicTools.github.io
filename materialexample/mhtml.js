@@ -13,7 +13,7 @@ function updateMHTMLObjects() {
   var materialBackgroundColor = "#eeeeee";
   var materialAccentColor = "#001E8D";
   var materialSecondaryColor = "#002E9D";
-  var materialTextColor = "#EEEEEE";
+  var materialTextColor = "#FFFFFF";
   //Iterate through all toolbars and convert them to cool-looking toolbars!!!
   for(i = 0; i < toolbars.length; i++) {
     var toolbarTextText = toolbars[i].getAttribute("title");
