@@ -3,6 +3,9 @@ function toolbar(title, color) {
   
 }
 function updateMHTMLObjects() {
+  document.getElementsByTagName("body")[0].style.padding = "0";
+  document.getElementsByTagName("body")[0].style.margin = "0";
+  
   var toolbars = document.getElementsByTagName("toolbar");
   var contents = document.getElementsByTagName("content");
   var copyrights = document.getElementsByTagName("copyright");
@@ -26,6 +29,7 @@ function updateMHTMLObjects() {
     
     var toolbarChildDiv = document.createElement("div");
     var toolbarText = document.createElement("span");
+    toolbars[i].innerHTML = "";
     toolbarText.style.color = materialTextColor;
     toolbarText.style.textSize = "30px";
     toolbarText.style.fontFamily = "'Roboto', sans-serif";
