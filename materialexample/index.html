@@ -13,11 +13,15 @@
       function fab1Click() {
         alert("Fab 1 Clicked!");
       }
+      function searchButtonClick() {
+        alert("Search Button Clicked");
+      }
     </script>
     <mhtml type="accentColor" color="#E91E63" />
   </head>
   <body>
     <toolbar title="MaterialExample" hamburger="true"></toolbar>
+    <action clickFunction="searchButtonClick()">search</action>
     <fab>add</fab>
     <content>
       <h1>TEST</h1><br />
