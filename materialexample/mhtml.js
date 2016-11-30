@@ -18,7 +18,8 @@ function updateMHTMLObjects() {
   var materialSecondaryColor = "#002E9D";
   var materialTextColor = "#FFFFFF";
   for(i = 0; i < fabs.length; i++) {
-    fabs[i].innerHTML = '<div id="fab'+i+'" style="padding-top:15px; cursor:pointer; font-size:24px; width:56px; -webkit-box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.26); -moz-box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.26); box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.26);height: 56px; border-radius:100%; background-color:'+materialAccentColor+'; color:'+materialTextColor+'; position:fixed; bottom:23px; right:23px; text-align:center;"><i class="material-icons">'+fabs[i].innerHTML+'</i></div>';
+    var readable = i+1;
+    fabs[i].innerHTML = '<div onClick="fab'+readable+'()" id="fab'+readable+'" style="padding-top:15px; cursor:pointer; font-size:24px; width:56px; -webkit-box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.26); -moz-box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.26); box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.26);height: 56px; border-radius:100%; background-color:'+materialAccentColor+'; color:'+materialTextColor+'; position:fixed; bottom:23px; right:23px; text-align:center;"><i class="material-icons">'+fabs[i].innerHTML+'</i></div>';
   }
   for(i = 0; i < actions.length; i++) {
     
