@@ -25,7 +25,7 @@ function updateMHTMLObjects() {
     var buffer = i * 21;
     var totalbuffer = buffer + 50;
     var methodToCall = actions[i].getAttribute("clickFunction");
-    actions[i].innerHTML = '<i style="position:fixed; right:'+totalbuffer+'px; top:32px; cursor:pointer;" onClick="'+methodToCall+'" class="material-icons">'+actions[i].innerHTML+'</i>
+    actions[i].innerHTML = '<i style="position:fixed; right:'+totalbuffer+'px; top:32px; cursor:pointer;" onClick="'+methodToCall+'" class="material-icons">'+actions[i].innerHTML+'</i>';
   }
   for(i = 0; i < contents.length; i++) {
     contents[i].innerHTML = '<div id="content" style="width:100%; font-family: \'Roboto\', sans-serif; padding-left:100px; padding-right:100px;">'+contents[i].innerHTML+'</div>';
