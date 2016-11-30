@@ -18,7 +18,7 @@ function updateMHTMLObjects() {
   var materialSecondaryColor = "#002E9D";
   var materialTextColor = "#FFFFFF";
   for(i = 0; i < fabs.length; i++) {
-    fabs[i].innerHTML = '<div style="padding:21px; background-color:'+materialAccentColor+'; color:'+materialTextColor+'; position:fixed; bottom:72px; right:50px;"><i class="material-icons">'+fabs[i].innerHTML+'</i></div>';
+    fabs[i].innerHTML = '<div style="padding:21px; border-radius:100%; background-color:'+materialAccentColor+'; color:'+materialTextColor+'; position:fixed; bottom:72px; right:50px;"><i class="material-icons">'+fabs[i].innerHTML+'</i></div>';
   }
   for(i = 0; i < actions.length; i++) {
     
