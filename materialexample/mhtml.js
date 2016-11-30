@@ -13,9 +13,16 @@ function updateMHTMLObjects() {
   var copyrights = document.getElementsByTagName("copyright");
   var buttons = document.getElementsByTagName("mbutton");
   var fabs = document.getElementsByTagName("fab");
+  var actions = document.getElementsByTagName("action");
   var materialBackgroundColor = "#eeeeee";
   var materialSecondaryColor = "#002E9D";
   var materialTextColor = "#FFFFFF";
+  for(i = 0; i < fabs.length; i++) {
+    fabs[i].innerHTML = '<div style="background-color:'+materialAccentColor+'; color:'+materialTextColor+';"><i class="material-icons">'+fabs[i].innerHTML+'</i></div>';
+  }
+  for(i = 0; i < actions.length; i++) {
+    
+  }
   for(i = 0; i < contents.length; i++) {
     contents[i].innerHTML = '<div id="content" style="width:100%; font-family: \'Roboto\', sans-serif; padding-left:100px; padding-right:100px;">'+contents[i].innerHTML+'</div>';
   }
@@ -26,18 +33,6 @@ function updateMHTMLObjects() {
   for(i = 0; i < toolbars.length; i++) {
     var toolbarTextText = toolbars[i].getAttribute("title");
     var hamburger = toolbars[i].getAttribute("hamburger");
-    var icon = toolbars[i].getAttribute("iconURL");
-    var iconOne = toolbars[i].getAttribute("iconOneURL");
-    var iconTwo = toolbars[i].getAttribute("iconTwoURL");
-    var iconThree = toolbars[i].getAttribute("iconThreeURL");
-    var iconFour = toolbars[i].getAttribute("iconFourURL");
-    var iconFive = toolbars[i].getAttribute("iconFiveURL");
-    var iconSix = toolbars[i].getAttribute("iconSixURL");
-    var iconSeven = toolbars[i].getAttribute("iconSevenURL");
-    var iconEight = toolbars[i].getAttribute("iconEightURL");
-    var iconNine = toolbars[i].getAttribute("iconNineURL");
-    var iconTen = toolbars[i].getAttribute("iconTenURL");
-    
     if(!hamburger) {
     toolbars[i].innerHTML = '<div style="width:100%; box-sizing: border-box; background-color:'+materialAccentColor+'; color:'+materialTextColor+'; font-family: \'Roboto\', sans-serif; font-weight:400; font-size: 18px; padding:21px; -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.26); -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.26); box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.26); position:fixed; top:0;">'+toolbarTextText+'</div>';
     } else {
