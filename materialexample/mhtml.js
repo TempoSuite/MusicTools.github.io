@@ -23,7 +23,7 @@ function updateMHTMLObjects() {
   }
   for(i = 0; i < actions.length; i++) {
     var buffer = i * 21;
-    var totalbuffer = buffer + 31;
+    var totalbuffer = buffer + 36;
     var methodToCall = actions[i].getAttribute("clickFunction");
     actions[i].innerHTML = '<i style="color:'+materialTextColor+';position:fixed; right:'+totalbuffer+'px; top:18px; cursor:pointer;" onClick="'+methodToCall+'" class="material-icons">'+actions[i].innerHTML+'</i>';
   }
