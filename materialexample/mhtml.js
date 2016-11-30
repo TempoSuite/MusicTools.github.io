@@ -41,10 +41,10 @@ function updateMHTMLObjects() {
     var iconTen = toolbars[i].getAttribute("iconTenURL");
     
     if(!hamburger) {
-    toolbars[i].innerHTML = '<div style="width:100%; box-sizing: border-box; background-color:'+materialAccentColor+'; color:'+materialTextColor+'; font-family: \'Roboto\', sans-serif; font-weight:400; font-size: 18px; padding:21px; -webkit-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4); -moz-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4); box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4); position:fixed; top:0;">'+toolbarTextText+'</div>';
+    toolbars[i].innerHTML = '<div style="width:100%; box-sizing: border-box; background-color:'+materialAccentColor+'; color:'+materialTextColor+'; font-family: \'Roboto\', sans-serif; font-weight:400; font-size: 18px; padding:21px; -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.26); -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.26); box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.26); position:fixed; top:0;">'+toolbarTextText+'</div>';
     } else {
     toolbars[i].style.color = materialTextColor;
-    toolbars[i].innerHTML = '<div style="width:100%; box-sizing: border-box; background-color:'+materialAccentColor+'; font-family: \'Roboto\', sans-serif; font-weight:400; font-size: 18px; padding:21px; padding-left:63px; -webkit-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4); -moz-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4); box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4); position:fixed; top:0;">'+toolbarTextText+'</div><i onClick="openHamburger()" style="position:fixed; font-size: 24px; cursor:pointer; left: 21px; top:32px; margin:0px; font-family:\'Material Icons\'; font-style:normal; line-height:0;" >menu</i>';
+    toolbars[i].innerHTML = '<div style="width:100%; box-sizing: border-box; background-color:'+materialAccentColor+'; font-family: \'Roboto\', sans-serif; font-weight:400; font-size: 18px; padding:21px; padding-left:63px; -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.26); -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.26); box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.26); position:fixed; top:0;">'+toolbarTextText+'</div><i onClick="openHamburger()" style="position:fixed; font-size: 24px; cursor:pointer; left: 21px; top:32px; margin:0px; font-family:\'Material Icons\'; font-style:normal; line-height:0;" >menu</i>';
     }
     
     //alert("Material Styles Added");
