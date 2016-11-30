@@ -22,7 +22,7 @@ function updateMHTMLObjects() {
     fabs[i].innerHTML = '<div onClick="fab'+readable+'Click()" id="fab'+readable+'" style="padding-top:15px; cursor:pointer; font-size:24px; width:56px; -webkit-box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.26); -moz-box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.26); box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.26);height: 56px; border-radius:100%; background-color:'+materialAccentColor+'; color:'+materialTextColor+'; position:fixed; bottom:23px; right:23px; text-align:center;"><i class="material-icons">'+fabs[i].innerHTML+'</i></div>';
   }
   for(i = 0; i < actions.length; i++) {
-    var buffer = i * 21;
+    var buffer = i * 42;
     var totalbuffer = buffer + 36;
     var methodToCall = actions[i].getAttribute("clickFunction");
     actions[i].innerHTML = '<i style="color:'+materialTextColor+';position:fixed; right:'+totalbuffer+'px; top:18px; cursor:pointer;" onClick="'+methodToCall+'" class="material-icons">'+actions[i].innerHTML+'</i>';
