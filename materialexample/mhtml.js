@@ -17,7 +17,7 @@ function updateMHTMLObjects() {
   var materialSecondaryColor = "#002E9D";
   var materialTextColor = "#FFFFFF";
   for(i = 0; i < contents.length; i++) {
-    contents[i].innerHTML = '<div id="content" style="width:100%; font-family: \'Roboto\', sans-serif; padding:100px;">'+contents[i].innerHTML+'</div>';
+    contents[i].innerHTML = '<div id="content" style="width:100%; font-family: \'Roboto\', sans-serif; padding-left:100px; padding-right:100px;">'+contents[i].innerHTML+'</div>';
   }
   for(i = 0; i < buttons.length; i++) {
     buttons[i].innerHTML = '<button style="padding:10px; margin:10px; background-color:'+materialAccentColor+'; color:'+materialTextColor+'; -webkit-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4); -moz-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4); box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4); border:none; font-family: \'Roboto\', sans-serif; font-weight:bold; cursor:pointer; text-transform:uppercase;">'+buttons[i].innerHTML+'</button>';
