@@ -16,12 +16,16 @@
       function searchButtonClick() {
         alert("Search Button Clicked");
       }
+      function warningButtonClick() {
+        alert("Warning Button Clicked");
+      }
     </script>
     <mhtml type="accentColor" color="#00897B" />
   </head>
   <body>
     <toolbar title="MaterialExample" hamburger="true"></toolbar>
     <action clickFunction="searchButtonClick()">search</action>
+    <action clickFunction="warningButtonClick()">warning</action>
     <fab>add</fab>
     <content>
       <h1>TEST</h1><br />
