@@ -18,13 +18,13 @@ function updateMHTMLObjects() {
   var materialSecondaryColor = "#002E9D";
   var materialTextColor = "#FFFFFF";
   for(i = 0; i < fabs.length; i++) {
-    fabs[i].innerHTML = '<div style="width:56px; -webkit-box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.26); -moz-box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.26); box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.26);height: 56px; border-radius:100%; background-color:'+materialAccentColor+'; color:'+materialTextColor+'; position:fixed; bottom:23px; right:23px; text-align:center;"><i class="material-icons">'+fabs[i].innerHTML+'</i></div>';
+    fabs[i].innerHTML = '<div style="padding-top:10px; width:56px; -webkit-box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.26); -moz-box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.26); box-shadow: 0px 3px 15px 0px rgba(0,0,0,0.26);height: 56px; border-radius:100%; background-color:'+materialAccentColor+'; color:'+materialTextColor+'; position:fixed; bottom:23px; right:23px; text-align:center;"><i class="material-icons">'+fabs[i].innerHTML+'</i></div>';
   }
   for(i = 0; i < actions.length; i++) {
     
   }
   for(i = 0; i < contents.length; i++) {
-    contents[i].innerHTML = '<div id="content" style="padding-top:10px; width:100%; font-family: \'Roboto\', sans-serif; padding-left:100px; padding-right:100px;">'+contents[i].innerHTML+'</div>';
+    contents[i].innerHTML = '<div id="content" style="width:100%; font-family: \'Roboto\', sans-serif; padding-left:100px; padding-right:100px;">'+contents[i].innerHTML+'</div>';
   }
   for(i = 0; i < buttons.length; i++) {
     buttons[i].innerHTML = '<button style="padding:10px; margin:10px; background-color:'+materialAccentColor+'; color:'+materialTextColor+'; -webkit-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4); -moz-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4); box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.4); border:none; font-family: \'Roboto\', sans-serif; font-weight:bold; cursor:pointer; text-transform:uppercase;">'+buttons[i].innerHTML+'</button>';
