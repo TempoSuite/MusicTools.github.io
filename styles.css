@@ -199,3 +199,7 @@ button {
 #second_toolbar > button:hover {
   background-color:#fff;
 }
+.small {
+  font-size:8px;
+  color:lightgray;
+}
