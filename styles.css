@@ -203,3 +203,9 @@ button {
   font-size:8px;
   color:#ccc;
 }
+.comingsoon {
+  background-color:#ff0000;
+  margin-left:15px;
+  color:white;
+  border-radius:5px;
+}
