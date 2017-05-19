@@ -209,4 +209,8 @@ button {
   color:white;
   border-radius:5px;
   padding:5px;
+  line-height:45px;
+}
+ul {
+  width:25%;
 }
