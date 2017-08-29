@@ -26,12 +26,27 @@
     
     <mhtml type="accentColor" color="#FFD900"></mhtml>
     <mhtml type="primaryColor" color="#001E8D"></mhtml>
+    <style>
+      #menu-header {
+          height: 150px;
+          background: #001E8D;
+          /* For browsers that do not support gradients */
+          background: -webkit-linear-gradient(left, #001E8D, #000039);
+          /* For Safari 5.1 to 6.0 */
+          background: -o-linear-gradient(right, #001E8D, #000039);
+          /* For Opera 11.1 to 12.0 */
+          background: -moz-linear-gradient(right, #001E8D, #000039);
+          /* For Firefox 3.6 to 15 */
+          background: linear-gradient(to right, #001E8D, #000039);
+          /* Standard syntax (must be last) */
+    </style>
   </head>
   <body>
     <toolbar title="MusicTools" hamburger="true"></toolbar>
     <HamburgerMenu style="background-color:#eee;">
-      &nbsp; Test!!!<br />
-      Multiple Lines.
+      <div id="menu-header">
+          
+      </div>
     </HamburgerMenu>
     <content>
       Dashboard Coming Soon!
