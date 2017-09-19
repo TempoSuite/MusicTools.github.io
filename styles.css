@@ -211,7 +211,7 @@ button {
   padding:5px;
   line-height:40px;
 }
-ul {
+ul.list {
   width:40%;
   list-style-type:none;
 }
