@@ -6,18 +6,18 @@
     <!-- COPY AND PASTE THE WEB SETUP SNIPPET HERE: -->
       <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
     <script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyCkr17eHQRyOX4tlE-qluYt52AhXM7Gg0I",
-    authDomain: "fir-musictools.firebaseapp.com",
-    databaseURL: "https://fir-musictools.firebaseio.com",
-    storageBucket: "firebase-musictools.appspot.com",
-  };
-  firebase.initializeApp(config);
-</script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyCkr17eHQRyOX4tlE-qluYt52AhXM7Gg0I",
+        authDomain: "fir-musictools.firebaseapp.com",
+        databaseURL: "https://fir-musictools.firebaseio.com",
+        storageBucket: "firebase-musictools.appspot.com",
+      };
+      firebase.initializeApp(config);
+    </script>
     <!-- END OF WEB SNIPPET -->
-    <script src="https://www.gstatic.com/firebasejs/ui/live/0.4/firebase-ui-auth.js"></script>
-    <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/live/0.4/firebase-ui-auth.css" />
+    <script src="https://cdn.firebase.com/libs/firebaseui/2.3.0/firebaseui.js"></script>
+    <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.3.0/firebaseui.css" />
     <style>
       body {
         margin: 0;
@@ -45,10 +45,11 @@
         'signInOptions': [
           // TODO(developer): Remove the providers you don't need for your app.
           firebase.auth.GoogleAuthProvider.PROVIDER_ID,
-          firebase.auth.EmailAuthProvider.PROVIDER_ID
+          firebase.auth.EmailAuthProvider.PROVIDER_ID,
+          firebase.auth.PhoneAuthProvider.PROVIDER_ID
         ],
         // Terms of service url.
-        'tosUrl': 'https://sub6resources.blogspot.com/p/termsofservice.html'
+        'tosUrl': 'https://musictools.matthewwhitaker.me/legal'
       };
       // Initialize the FirebaseUI Widget using Firebase.
       var ui = new firebaseui.auth.AuthUI(firebase.auth());
@@ -59,26 +60,27 @@
   </head>
   <body>
     <header>
+      <span class="left">
         <a href="index.html">
           <span id="imgandtitle">
             <img src="ic_launcher.png" height="35px" />
             <span id="title">MusicTools</span>
           </span>
         </a>
-        <span class="spacer">
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        </span>
+      </span>
         <!--<a href="/messages">
           <span id="messageslink">
             Messages
           </span>
         </a>-->
+      <span class="right">
         <a href="/account">
           <span id="accountimgandname">
              <span class="larger"></span> Signed Out
             <img src="ic_account.svg" height="35px" id="accountImage" align="middle"/>
           </span>
         </a>
+      </span>
     </header>
     <div id="firebaseui-auth-container" style="margin-top:100px;"></div>
     <footer style="position:absolute; bottom:0;">
