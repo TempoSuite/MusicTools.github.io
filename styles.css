@@ -27,11 +27,11 @@ header {
   top:0;
   font-size:23px;
 }
-header > .right > a {
+header > span > a {
   color:white;
   text-decoration:none;
 }
-header > .right > a > #messageslink, #accountimgandname {
+header > span > a > #messageslink, #accountimgandname {
   font-size:13px;
 }
 footer {
