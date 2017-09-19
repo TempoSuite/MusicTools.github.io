@@ -3,19 +3,22 @@
   <head>
     <meta charset="UTF-8">
     <title>MusicTools Login</title>
-    <!-- COPY AND PASTE THE WEB SETUP SNIPPET HERE: -->
-      <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+    <!-- FIREBASE INIT: -->
+    <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
     <script>
       // Initialize Firebase
       var config = {
         apiKey: "AIzaSyCkr17eHQRyOX4tlE-qluYt52AhXM7Gg0I",
         authDomain: "fir-musictools.firebaseapp.com",
         databaseURL: "https://fir-musictools.firebaseio.com",
+        projectId: "firebase-musictools",
         storageBucket: "firebase-musictools.appspot.com",
+        messagingSenderId: "966591221600"
       };
       firebase.initializeApp(config);
     </script>
     <!-- END OF WEB SNIPPET -->
+    
     <script src="https://cdn.firebase.com/libs/firebaseui/2.3.0/firebaseui.js"></script>
     <link type="text/css" rel="stylesheet" href="https://cdn.firebase.com/libs/firebaseui/2.3.0/firebaseui.css" />
     <style>
