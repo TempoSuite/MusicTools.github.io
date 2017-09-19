@@ -3,14 +3,17 @@
   <head>
     <meta charset="UTF-8">
     <title>MusicTools</title>
-    <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+    
+    <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
     <script>
       // Initialize Firebase
       var config = {
         apiKey: "AIzaSyCkr17eHQRyOX4tlE-qluYt52AhXM7Gg0I",
         authDomain: "fir-musictools.firebaseapp.com",
         databaseURL: "https://fir-musictools.firebaseio.com",
+        projectId: "firebase-musictools",
         storageBucket: "firebase-musictools.appspot.com",
+        messagingSenderId: "966591221600"
       };
       firebase.initializeApp(config);
       var database = firebase.database();
