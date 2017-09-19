@@ -215,3 +215,6 @@ ul {
   width:40%;
   list-style-type:none;
 }
+.right {
+  float:right;
+}
