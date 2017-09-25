@@ -105,9 +105,10 @@
         setIncludeID("container", "tools");
       }
     function onMHTML() {
+      alert(displayName);
       if(signedOut) {
         //Redirect to sign-in page.
-        document.getElementsByTagName("BottomNavigation")[0].style.display = "none";
+        document.getElementsByTagName("BottomNavigation")[0].remove();
         setIncludeID("container", "signed-out");
       } else {
         loadHome();
