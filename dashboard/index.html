@@ -75,7 +75,16 @@
   <script src="https://musictools.matthewwhitaker.me/account.js?v=0"></script>
   <script src="https://musictools.matthewwhitaker.me/app.js?v=0"></script>
   <script>
-    alert(firebase.auth().currentUser.name);
+    <script>
+      function onAuthInit() {
+        if(photoURL == null) {
+          photoURL = "https://musictools.matthewwhitaker.me/null.svg";
+        }
+        if(displayName == undefined) {
+          displayName = "Signed Out";
+        }
+        alert(displayName);
+    }
       function openHome() {
         setIncludeID("container", "home");
       }
