@@ -119,6 +119,7 @@
       document.getElementById("home_container").innerHTML = "<card padding>Home</card>";
     }
     function loadMusic() {
+      document.getElementById("home").innerHTML += "User: "+displayName;
       if(uid != undefined) {
         var musicRef = database.ref("users/"+uid+"/music");
         musicRef.on('child_added', function(data) {
