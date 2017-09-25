@@ -104,7 +104,15 @@
         setIncludeID("container", "tools");
       }
     function onMHTML() {
-      alert(firebase.auth().currentUser.displayName);
+      firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          // User is signed in.
+          alert(user.displayName);
+        } else {
+          // No user is signed in.
+          alert("Signed Out!");
+        }
+      });
       if(signedOut) {
         //Redirect to sign-in page.
         document.getElementsByTagName("BottomNavigation")[0].remove();
