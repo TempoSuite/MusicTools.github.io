@@ -93,7 +93,6 @@
         if(displayName == undefined || displayName == null) {
           displayName = "Signed Out";
         }
-        
       }
       function openHome() {
         setIncludeID("container", "home");
@@ -105,7 +104,7 @@
         setIncludeID("container", "tools");
       }
     function onMHTML() {
-      alert(displayName);
+      alert(firebase.auth().currentUser.displayName);
       if(signedOut) {
         //Redirect to sign-in page.
         document.getElementsByTagName("BottomNavigation")[0].remove();
