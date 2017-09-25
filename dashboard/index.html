@@ -105,7 +105,7 @@
         setIncludeID("container", "tools");
       }
     function onMHTML() {
-      if(!signedOut) {
+      if(signedOut) {
         //Redirect to sign-in page.
         document.getElementsByTagName("BottomNavigation")[0].style.display = "none";
         setIncludeID("container", "signed-out");
