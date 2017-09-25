@@ -106,30 +106,23 @@
     function onMHTML() {
       firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
-          // User is signed in.
-          alert(user.displayName);
+          loadHome();
+          loadMusic(user);
+          loadTools();
         } else {
-          // No user is signed in.
-          alert("Signed Out!");
+          //Redirect to sign-in page.
+          document.getElementsByTagName("BottomNavigation")[0].remove();
+          setIncludeID("container", "signed-out");
         }
       });
-      if(signedOut) {
-        //Redirect to sign-in page.
-        document.getElementsByTagName("BottomNavigation")[0].remove();
-        setIncludeID("container", "signed-out");
-      } else {
-        loadHome();
-        loadMusic();
-        loadTools();
-      }
     }
     function loadHome() {
       document.getElementById("home_container").innerHTML = "<card padding>Home</card>";
     }
-    function loadMusic() {
-      document.getElementById("home").innerHTML += "User: "+displayName;
-      if(uid != undefined) {
-        var musicRef = database.ref("users/"+uid+"/music");
+    function loadMusic(user) {
+      document.getElementById("home").innerHTML += "User: "+user.displayName;
+      if(user.uid != undefined) {
+        var musicRef = database.ref("users/"+user.uid+"/music");
         musicRef.on('child_added', function(data) {
           addMusic(data.key, data.val().artist, data.val().duration, data.val().title, data.val().year);
         });
