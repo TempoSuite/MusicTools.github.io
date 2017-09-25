@@ -46,23 +46,44 @@
         bottom:0;
         right:0;
       }
+      body {
+        background-color: #eee;
+      }
     </style>
   </head>
   <body>
-    <toolbar title="MusicTools" hamburger="true"></toolbar>
-    <HamburgerMenu style="background-color:#eee;">
-      <div id="menu-header">
-        <img id="profile-pic" src="https://musictools.matthewwhitaker.me/null.svg" /> <span id="account-name">Account Name</span>
-      </div>
-      <ListView>
-        <item><icon>home</icon>&nbsp;Home</item>
-      </ListView>
-    </HamburgerMenu>
+    <toolbar title="MusicTools"></toolbar>
     <content>
-      Dashboard Coming Soon!<br />
+      <include id="container" includeId="home"></include>
     </content>
+    <fragment id="home" style="display:none;">
+      Home Coming Soon!
+    </fragment>
+    <fragment id="music" style="display:none;">
+      Music Coming Soon!
+    </fragment>
+    <fragment id="tools" style="display:none;">
+      Tools Coming Soon!
+    </fragment>
+    <BottomNavigation>
+      <div onClick="openMusic()"><icon>music_note</icon><br />Music</div>
+      <div selected onClick="openHome()"><icon>home</icon><br />Home</div>
+      <div onClick="openTools()"><icon>build</icon><br />Tools</div>
+    </BottomNavigation>
   </body>
   <script src="https://matthewwhitaker.me/api/mhtml.js" async></script>
-  <script src="../account.js?v=0"></script>
-  <script src="../app.js?v=0"></script>
+  <script src="https://musictools.matthewwhitaker.me/account.js?v=0"></script>
+  <script src="https://musictools.matthewwhitaker.me/app.js?v=0"></script>
+  <script>
+    alert(firebase.auth().currentUser.name);
+      function openHome() {
+        setIncludeID("container", "home");
+      }
+      function openMusic() {
+        setIncludeID("container", "music");
+      }
+      function openTools() {
+        setIncludeID("container", "tools");
+      }
+    </script>
 </html>
