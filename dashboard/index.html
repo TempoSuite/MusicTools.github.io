@@ -124,15 +124,15 @@
       if(user.uid != undefined) {
         var musicRef = database.ref("users/"+user.uid+"/music");
         musicRef.on('child_added', function(data) {
-          addMusic(data.key, data.val().artist, data.val().duration, data.val().title, data.val().year);
+          addMusic(data.key, data.val().artist, data.val().duration, data.val().title, data.val().year, data.val().url);
         });
       }
     }
     function loadTools() {
       
     }
-    function addMusic(key, artist, duration, title, year) {
-      document.getElementById("music_list").innerHTML += "<div>"+title+"--Year: "+year+" Artist: "+artist+" Duration: "+duration+"</div>"
+    function addMusic(key, artist, duration, title, year, url) {
+      document.getElementById("music_list").innerHTML += "<div><a href='"+url+"'>"+title+"--Year: "+year+" Artist: "+artist+" Duration: "+duration+"</a></div>"
     }
     addMusic(0, "Matthew Whitaker", 1230, "Matthew's Song", 2015)
     </script>
