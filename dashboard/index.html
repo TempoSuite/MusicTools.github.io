@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -22,6 +23,7 @@
         messagingSenderId: "966591221600"
       };
       firebase.initializeApp(config);
+      var database = firebase.database();
     </script>
     
     <mhtml type="accentColor" color="#FFD900"></mhtml>
@@ -53,18 +55,27 @@
   </head>
   <body>
     <toolbar title="MusicTools"></toolbar>
-    <content>
-      <include id="container" includeId="home"></include>
-    </content>
+    
     <fragment id="home" style="display:none;">
       Home Coming Soon!
+      <div id="home_container"></div>
     </fragment>
     <fragment id="music" style="display:none;">
-      Music Coming Soon!
+      <card padding>
+      <ListView id="music_list">
+        
+      </ListView>
+      </card>
     </fragment>
     <fragment id="tools" style="display:none;">
       Tools Coming Soon!
     </fragment>
+    <fragment id="signed-out" style="display:none;">
+      Signed Out! Please <a href="https://musictools.matthewwhitaker.me/widget">sign in</a>.
+    </fragment>
+    <content>
+      <include id="container" includeId="home"></include>
+    </content>
     <BottomNavigation>
       <div onClick="openMusic()"><icon>music_note</icon><br />Music</div>
       <div selected onClick="openHome()"><icon>home</icon><br />Home</div>
@@ -76,13 +87,13 @@
   <script src="https://musictools.matthewwhitaker.me/app.js?v=0"></script>
   <script>
       function onAuthInit() {
-        if(photoURL == null) {
+        if(photoURL == null || photoURL == undefined) {
           photoURL = "https://musictools.matthewwhitaker.me/null.svg";
         }
-        if(displayName == undefined) {
+        if(displayName == undefined || displayName == null) {
           displayName = "Signed Out";
         }
-        alert(displayName);
+        
       }
       function openHome() {
         setIncludeID("container", "home");
@@ -93,5 +104,34 @@
       function openTools() {
         setIncludeID("container", "tools");
       }
+    function onMHTML() {
+      if(!signedOut) {
+        //Redirect to sign-in page.
+        document.getElementsByTagName("BottomNavigation")[0].style.display = "none";
+        setIncludeID("container", "signed-out");
+      } else {
+        loadHome();
+        loadMusic();
+        loadTools();
+      }
+    }
+    function loadHome() {
+      document.getElementById("home_container").innerHTML = "<card padding>Home</card>";
+    }
+    function loadMusic() {
+      if(uid != undefined) {
+        var musicRef = database.ref("users/"+uid+"/music");
+        musicRef.on('child_added', function(data) {
+          addMusic(data.key, data.val().artist, data.val().duration, data.val().title, data.val().year);
+        });
+      }
+    }
+    function loadTools() {
+      
+    }
+    function addMusic(key, artist, duration, title, year) {
+      document.getElementById("music_list").innerHTML += "<div>"+title+"--Year: "+year+" Artist: "+artist+" Duration: "+duration+"</div>"
+    }
+    addMusic(0, "Matthew Whitaker", 1230, "Matthew's Song", 2015)
     </script>
 </html>
