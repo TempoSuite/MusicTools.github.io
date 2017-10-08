@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width">
     <mhtml type="primaryColor" color="#001E8D"></mhtml>
     <mhtml type="accentColor" color="#FFD900"></mhtml>
-    <link rel="icon" type="image/png" href="ic_launcher.png">
+    <link rel="icon" type="image/png" href="../ic_launcher.png">
     <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
     <script>
       // Initialize Firebase
@@ -25,14 +25,40 @@
   <body>
     <toolbar title="Tempo - Classroom"></toolbar>
     <content>
+      <include id="container" includeID="initialFragment"></include>
+    </content>
+    <fragment id="initialFragment">
       <div style="text-align:center;">
         <h1>Tempo Classroom is under construction!</h1>
         <hr width="100%" />
       </div>
       Tempo Classroom helps you manage your music students by allowing them to submit playing tests and practice reports. For a limited time, you can sign up for a free classroom account.
-      <mbutton accent>Register Your Class</mbutton>
-    </content>
+      <mbutton accent onClick="setIncludeID('container','signInFragment')">Register Your Class</mbutton>
+    </fragment>
+    <fragment id="signInFragment">
+      To begin with, please sign in to or create your personal account:<br />
+      <iframe src="../widget">Loading...</iframe>
+    </fragment>
     <script src="https://matthewwhitaker.me/api/mhtml.js"></script>
+    <script>
+      function onAuthInit() {
+          if(photoURL == null || photoURL == undefined) {
+            photoURL = "https://musictools.matthewwhitaker.me/null.svg";
+          }
+          if(displayName == undefined || displayName == null) {
+            displayName = "Signed Out";
+          }
+      }
+      function onMHTML() {
+        firebase.auth().onAuthStateChanged(function(user) {
+          if (user) {
+            alert("Signed In");
+          } else {
+            //Just display page as is.
+          }
+        });
+      }
+    </script>
     <script src="../account.js"></script>
   </body>
 </html>
