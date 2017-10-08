@@ -2,10 +2,20 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>MusicTools Login</title>
+    <title>Tempo Login</title>
     <!-- FIREBASE INIT: -->
     <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
     <script>
+      function getParameterByName(name, url) {
+        if (!url) url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+    }
+
       // Initialize Firebase
       var config = {
         apiKey: "AIzaSyCkr17eHQRyOX4tlE-qluYt52AhXM7Gg0I",
@@ -29,8 +39,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/javascript">
       // FirebaseUI config.
+      var redirect = getParameterByName("r");
+      if(redirect == null) {
+        redirect == "https://tempo.matthewwhitaker.me/dashboard";
+      }
       var uiConfig = {
-        signInSuccessUrl: 'https://musictools.matthewwhitaker.me/dashboard',
+        signInSuccessUrl: redirect,
         signInOptions: [
           // Leave the lines as is for the providers you want to offer your users.
           firebase.auth.GoogleAuthProvider.PROVIDER_ID,
@@ -46,7 +60,7 @@
           }
         ],
         // Terms of service url.
-        tosUrl: 'https://musictools.matthewwhitaker.me/legal'
+        tosUrl: 'https://tempo.matthewwhitaker.me/legal'
       };
 
       // Initialize the FirebaseUI Widget using Firebase.
@@ -58,10 +72,10 @@
   <body>
     <header>
       <span class="left">
-        <a href="https://musictools.matthewwhitaker.me">
+        <a href="https://tempo.matthewwhitaker.me">
           <span id="imgandtitle">
-            <img src="https://musictools.matthewwhitaker.me/ic_launcher.png" height="35px" />
-            <span id="title">MusicTools</span>
+            <img src="../ic_launcher.png" height="35px" />
+            <span id="title">Tempo</span>
           </span>
         </a>
       </span>
@@ -74,7 +88,7 @@
         <a href="/account">
           <span id="accountimgandname">
              <span class="larger"></span> Signed Out
-            <img src="https://musictools.matthewwhitaker.me/ic_account.svg" height="35px" id="accountImage" align="middle"/>
+            <img src="../ic_account.svg" height="35px" id="accountImage" align="middle"/>
           </span>
         </a>
       </span>
@@ -83,6 +97,6 @@
     <footer style="position:absolute; bottom:0;">
         &copy; 2016-2017 Sub 6 Resources
     </footer>
-    <link href="https://musictools.matthewwhitaker.me/styles.css" rel="stylesheet">
+    <link href="../styles.css" rel="stylesheet">
   </body>
 </html>
