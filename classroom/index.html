@@ -3,9 +3,24 @@
 <html>
   <head>
     <title>Tempo - Playing Test</title>
-    <meta name="viewport" value="width=device-width">
+    <meta name="viewport" content="width=device-width">
     <mhtml type="primaryColor" color="#001E8D"></mhtml>
     <mhtml type="accentColor" color="#FFD900"></mhtml>
+    <link rel="icon" type="image/png" href="ic_launcher.png">
+    <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyCkr17eHQRyOX4tlE-qluYt52AhXM7Gg0I",
+        authDomain: "fir-musictools.firebaseapp.com",
+        databaseURL: "https://fir-musictools.firebaseio.com",
+        projectId: "firebase-musictools",
+        storageBucket: "firebase-musictools.appspot.com",
+        messagingSenderId: "966591221600"
+      };
+      firebase.initializeApp(config);
+      var database = firebase.database();
+    </script>
   </head>
   <body>
     <toolbar title="Tempo - Classroom"></toolbar>
@@ -18,5 +33,6 @@
       <mbutton accent>Register Your Class</mbutton>
     </content>
     <script src="https://matthewwhitaker.me/api/mhtml.js"></script>
+    <script src="../account.js"></script>
   </body>
 </html>
