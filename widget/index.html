@@ -6,8 +6,8 @@
     <!-- FIREBASE INIT: -->
     <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
     <script>
-      function getParameterByName(name, url) {
-        if (!url) url = window.location.href;
+      function getParameterByName(name) {
+        var url = window.location.href;
         name = name.replace(/[\[\]]/g, "\\$&");
         var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
             results = regex.exec(url);
@@ -40,7 +40,7 @@
     <script type="text/javascript">
       // FirebaseUI config.
       var redirect = getParameterByName("r");
-      if(redirect == null) {
+      if(redirect == null || redirect == "") {
         redirect == "https://tempo.matthewwhitaker.me/dashboard";
       }
       var uiConfig = {
