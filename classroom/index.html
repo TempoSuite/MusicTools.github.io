@@ -25,7 +25,7 @@
   <body>
     <toolbar title="Tempo - Classroom"></toolbar>
     <content>
-      <include id="container" includeID="initialFragment"></include>
+      <include id="container" includeID="loadingFragment"></include>
     </content>
     <fragment id="initialFragment">
       <div style="text-align:center;">
@@ -38,6 +38,15 @@
     <fragment id="signInFragment">
       To begin with, please sign in to or create your personal account in a new tab:<br />
       <a href="../widget?r=https://tempo.matthewwhitaker.me/classroom#" target="_blank">Click here to sign in or create account in a new tab.</a>
+    </fragment>
+    <fragment id="createClassFragment">
+      <h3>Enter your class details:</h3>
+    </fragment>
+    <fragment id="classroomFragment">
+      Classroom Coming Soon...
+    </fragment>
+    <fragment id="loadingFragment">
+      <div style="text-align:center;"><h1>Loading...</h1></div>
     </fragment>
     <script src="https://matthewwhitaker.me/api/mhtml.js"></script>
     <script>
@@ -52,9 +61,17 @@
       function onMHTML() {
         firebase.auth().onAuthStateChanged(function(user) {
           if (user) {
-            alert("Signed In");
+            database.ref("/users/"+user.uid+"/classes").once('value').then(function(snapshot) {
+              if(snapshot.val()) {
+                //User has classes
+                
+              } else {
+                //User needs to create a class.
+                setIncludeID("container", "createClassFragment");
+              }
+            });
           } else {
-            //Just display page as is.
+            setIncludeID("container", "initialFragment");
           }
         });
       }
