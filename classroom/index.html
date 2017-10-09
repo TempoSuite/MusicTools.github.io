@@ -69,21 +69,17 @@
       function onMHTML() {
         firebase.auth().onAuthStateChanged(function(user) {
           currentUser = user;
-          alert(user);
           if (user) {
             database.ref("/users/"+user.uid+"/classes").once('value').then(function(snapshot) {
               if(snapshot.val()) {
                 //User has classes
-                alert("Redirecting... cl");
-                setIncludeId("container", "classroomFragment");
+                setIncludeID("container", "classroomFragment");
               } else {
                 //User needs to create a class.
-                alert("Redirectiong... cc");
                 setIncludeID("container", "createClassFragment");
               }
             });
           } else {
-            alert("please sign in!");
             setIncludeID("container", "initialFragment");
           }
         });
