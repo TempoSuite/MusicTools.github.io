@@ -49,7 +49,7 @@
       <mbutton onClick="newClass()">Create Class</mbutton>
     </fragment>
     <fragment id="classroomFragment">
-      Classroom Coming Soon...
+      Classroom is currently under construction...
     </fragment>
     <fragment id="loadingFragment">
       <div style="text-align:center;"><h1>Loading...</h1></div>
@@ -70,7 +70,7 @@
             database.ref("/users/"+user.uid+"/classes").once('value').then(function(snapshot) {
               if(snapshot.val()) {
                 //User has classes
-                
+                setIncludeId("container", "classroomFragment");
               } else {
                 //User needs to create a class.
                 setIncludeID("container", "createClassFragment");
@@ -85,7 +85,18 @@
         var className = document.getElementById("classname").value;
         var classDescription = document.getElementById("classdescription").value;
         var classSchoolName = document.getElementById("classschoolname").value;
-        alert("Class name: "+className+"\nClass Description: "+classDescription+"\nSchool Name: "+ classSchoolName);
+        var data = {
+          className: className,
+          classDescription: classDescription,
+          classSchoolName: classSchoolName,
+          teacherID:user.uid,
+          teacher:user.displayName
+        };
+        var newClassKey = database.ref("/classes").push().key;
+        database.ref("/classes/"+newClassKey).set(data);
+        var updates = {};
+        updates['/'+newClassKey] = "true";
+        database.ref("/users/"+user.uid+"/classes").update(updates);
       }
     </script>
     <script src="../account.js"></script>
