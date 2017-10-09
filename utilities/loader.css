@@ -1,0 +1,25 @@
+//Pulse-----------------------------------------------------
+//loader-size: 5rem;
+//animation-duration: 1.5s;
+//Usage <div class="pulse"></div>
+ 
+.pulse {
+   width: 5rem;
+   height: 5rem;
+   margin: 0 auto;
+   border-radius: 100%;
+   background:url("https://tempo.matthewwhitaker.me/ic_launcher.png");
+   opacity: 1;
+   animation: pulse 1.5s infinite ease-in-out;
+}
+ 
+@keyframes pulse {
+  0% {
+    transform: scale(0);
+    opacity: .8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
