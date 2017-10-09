@@ -22,6 +22,7 @@
       firebase.initializeApp(config);
       var database = firebase.database();
     </script>
+    <link rel="stylesheet" href="../utilities/loader.css">
   </head>
   <body>
     <toolbar title="Tempo Classroom"></toolbar>
@@ -53,7 +54,7 @@
       Classroom is currently under construction...
     </fragment>
     <fragment id="loadingFragment">
-      <div style="text-align:center;"><h1>Loading...</h1></div>
+      <div style="text-align:center;"><div class="pulse"></div> Loading...</div>
     </fragment>
     <script src="https://matthewwhitaker.me/api/mhtml.js"></script>
     <script>
