@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Tempo - Playing Test</title>
+    <title>Tempo Classroom</title>
     <meta name="viewport" content="width=device-width">
     <mhtml type="primaryColor" color="#001E8D"></mhtml>
     <mhtml type="accentColor" color="#FFD900"></mhtml>
@@ -23,7 +23,7 @@
     </script>
   </head>
   <body>
-    <toolbar title="Tempo - Classroom"></toolbar>
+    <toolbar title="Tempo Classroom"></toolbar>
     <content>
       <include id="container" includeID="loadingFragment"></include>
     </content>
@@ -41,9 +41,12 @@
     </fragment>
     <fragment id="createClassFragment">
       <h3>Enter your class details:</h3>
-      <EditText hint="Class Name" required></EditText><br />
-      <EditText hint="Class Description" type="multiline" required></EditText><br />
-      <EditText hint="School Name" required></EditText><br />
+      <form action="javascript:newClass()">
+        <EditText hint="Class Name" id="classname" required></EditText><br />
+        <EditText hint="Class Description" type="multiline" id="classdescription" required></EditText><br />
+        <EditText hint="School Name" id="classschoolname" required></EditText><br />
+      </form>
+      <mbutton onClick="newClass()">Create Class</mbutton>
     </fragment>
     <fragment id="classroomFragment">
       Classroom Coming Soon...
@@ -55,7 +58,7 @@
     <script>
       function onAuthInit() {
           if(photoURL == null || photoURL == undefined) {
-            photoURL = "https://musictools.matthewwhitaker.me/null.svg";
+            photoURL = "https://tempo.matthewwhitaker.me/null.svg";
           }
           if(displayName == undefined || displayName == null) {
             displayName = "Signed Out";
@@ -77,6 +80,12 @@
             setIncludeID("container", "initialFragment");
           }
         });
+      }
+      function newClass() {
+        var className = document.getElementById("classname").value;
+        var classDescription = document.getElementById("classdescription").value;
+        var classSchoolName = document.getElementById("classschoolname").value;
+        alert("Class name: "+className+"\nClass Description: "+classDescription+"\nSchool Name: "+ classSchoolName);
       }
     </script>
     <script src="../account.js"></script>
