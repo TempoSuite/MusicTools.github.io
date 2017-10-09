@@ -97,6 +97,7 @@
         var updates = {};
         updates['/'+newClassKey] = "true";
         database.ref("/users/"+user.uid+"/classes").update(updates);
+        window.location.reload();
       }
     </script>
     <script src="../account.js"></script>
