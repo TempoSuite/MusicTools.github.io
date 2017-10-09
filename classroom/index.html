@@ -9,6 +9,7 @@
     <link rel="icon" type="image/png" href="../ic_launcher.png">
     <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
     <script>
+      var currentUser = null;
       // Initialize Firebase
       var config = {
         apiKey: "AIzaSyCkr17eHQRyOX4tlE-qluYt52AhXM7Gg0I",
@@ -66,6 +67,7 @@
       }
       function onMHTML() {
         firebase.auth().onAuthStateChanged(function(user) {
+          currentUser = user;
           if (user) {
             database.ref("/users/"+user.uid+"/classes").once('value').then(function(snapshot) {
               if(snapshot.val()) {
@@ -89,14 +91,14 @@
           className: className,
           classDescription: classDescription,
           classSchoolName: classSchoolName,
-          teacherID:user.uid,
-          teacher:user.displayName
+          teacherID:currentUser.uid,
+          teacher:currentUser.displayName
         };
         var newClassKey = database.ref("/classes").push().key;
         database.ref("/classes/"+newClassKey).set(data);
         var updates = {};
         updates['/'+newClassKey] = "true";
-        database.ref("/users/"+user.uid+"/classes").update(updates);
+        database.ref("/users/"+currentUser.uid+"/classes").update(updates);
         window.location.reload();
       }
     </script>
