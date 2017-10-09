@@ -51,10 +51,10 @@
       <mbutton onClick="newClass()">Create Class</mbutton>
     </fragment>
     <fragment id="classroomFragment">
-      Classroom is currently under construction...
+      <h1>Classroom is currently under construction...</h1>
     </fragment>
     <fragment id="loadingFragment">
-      <div style="text-align:center;"><div class="pulse"></div> Loading...</div>
+      <div style="text-align:center;"><h1>Loading...</h1></div>
     </fragment>
     <script src="https://matthewwhitaker.me/api/mhtml.js"></script>
     <script>
@@ -69,17 +69,21 @@
       function onMHTML() {
         firebase.auth().onAuthStateChanged(function(user) {
           currentUser = user;
+          alert(user);
           if (user) {
             database.ref("/users/"+user.uid+"/classes").once('value').then(function(snapshot) {
               if(snapshot.val()) {
                 //User has classes
+                alert("Redirecting... cl");
                 setIncludeId("container", "classroomFragment");
               } else {
                 //User needs to create a class.
+                alert("Redirectiong... cc");
                 setIncludeID("container", "createClassFragment");
               }
             });
           } else {
+            alert("please sign in!");
             setIncludeID("container", "initialFragment");
           }
         });
