@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>MusicTools</title>
+    <title>Tempo</title>
     
     <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
     <script>
@@ -28,10 +28,10 @@
     <div id="container">
       <header>
         <span class="left">
-          <a href="https://musictools.matthewwhitaker.me">
+          <a href="https://tempo.matthewwhitaker.me">
             <span id="imgandtitle">
-              <img src="https://musictools.matthewwhitaker.me/ic_launcher.png" height="35px" />
-              <span id="title">MusicTools</span>
+              <img src="https://tempo.matthewwhitaker.me/ic_launcher.png" height="35px" />
+              <span id="title">Tempo</span>
             </span>
           </a>
         </span>
@@ -41,17 +41,17 @@
           </span>
         </a>-->
         <span class="right">
-          <a href="https://musictools.matthewwhitaker.me/account">
+          <a href="https://tempo.matthewwhitaker.me/account">
             <span id="accountimgandname">
                <span class="larger"></span> Signed Out
-              <img src="https://musictools.matthewwhitaker.me/ic_account.svg" height="35px" id="accountImage" align="middle"/>
+              <img src="https://tempo.matthewwhitaker.me/ic_account.svg" height="35px" id="accountImage" align="middle"/>
             </span>
           </a>
         </span>
       </header>
       <div id="content">
         <center>
-        <img src="https://musictools.matthewwhitaker.me/ic_account_dark.svg" width="100px" id="image" onClick="updateImage()" style="cursor:pointer;"/><br />
+        <img src="https://tempo.matthewwhitaker.me/ic_account_dark.svg" width="100px" id="image" onClick="updateImage()" style="cursor:pointer;"/><br />
         <span id="name" style="font-weight:bold; font-size:30px;">Signed Out</span><br />
         <span id="email"></span><br />
         <button onClick="signIn()" id="signin" style="display:none;">Sign In</button>
@@ -91,8 +91,8 @@
           
         }
         if(photoURL == null || photoURL == "null.svg") {
-          photoURL = "https://musictools.matthewwhitaker.me/null.svg";
-          photoURLDark = "https://musictools.matthewwhitaker.me/ic_account_dark.svg"
+          photoURL = "https://tempo.matthewwhitaker.me/null.svg";
+          photoURLDark = "https://tempo.matthewwhitaker.me/ic_account_dark.svg"
         } else {
           photoURLDark = photoURL;
         }
@@ -114,8 +114,8 @@
         alert("UPDATE IMAGE FLOW STARTED");
       }
     </script>
-    <script src="https://musictools.matthewwhitaker.me/account.js"></script>
-    <script src="https://musictools.matthewwhitaker.me/app.js"></script>
-    <link href="https://musictools.matthewwhitaker.me/styles.css" rel="stylesheet">
+    <script src="https://tempo.matthewwhitaker.me/account.js"></script>
+    <script src="https://tempo.matthewwhitaker.me/app.js"></script>
+    <link href="https://tempo.matthewwhitaker.me/styles.css" rel="stylesheet">
   </body>
 </html>
