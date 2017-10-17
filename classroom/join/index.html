@@ -1,9 +1,65 @@
 <!DOCTYPE html>
 <html>
   <head>
-    
+    <meta charset="UTF-8">
+    <title>Tempo - Join Class</title>
+    <link rel="icon" type="image/png" href="../../ic_launcher.png">
+    <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyCkr17eHQRyOX4tlE-qluYt52AhXM7Gg0I",
+        authDomain: "fir-musictools.firebaseapp.com",
+        databaseURL: "https://fir-musictools.firebaseio.com",
+        projectId: "firebase-musictools",
+        storageBucket: "firebase-musictools.appspot.com",
+        messagingSenderId: "966591221600"
+      };
+      firebase.initializeApp(config);
+      var database = firebase.database();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-    <h1>Under Construction...</h1>
+    <div id="container">
+      <header>
+        <span class="left">
+          <a href="index.html">
+            <span id="imgandtitle">
+              <img src="ic_launcher.png" height="35px" />
+              <span id="title">Tempo</span>
+            </span>
+          </a>
+        </span>
+        <span class="right">
+          <a href="/account">
+            <span id="accountimgandname">
+               <span class="larger"></span> Signed Out
+              <img src="../../ic_account.svg" height="35px" id="accountImage" align="middle"/>
+            </span>
+          </a>
+        </span>
+      </header>
+      <div id="content">
+        This page is under construction...
+      </div>
+      <footer>
+        &copy; 2017 Sub 6 Resources<br />
+        <span class="small"><a href="../../legal">LEGAL</a>&nbsp;&nbsp;&nbsp;<a href="../../about">ABOUT</a></span>
+      </footer>
+    </div>
+    <script>
+      function onAuthInit() {
+        if(photoURL == null) {
+          photoURL = "../../null.svg";
+        }
+        if(displayName == undefined) {
+          displayName = "Signed Out";
+        }
+        document.getElementById("accountimgandname").innerHTML=" <span class='larger'></span> "+displayName+" <img src='"+photoURL+"' height='35px' id='accountImage' align='middle' />";
+      }
+    </script>
+    <script src="../../account.js?v=0"></script>
+    <link href="../../styles.css?v=1" rel="stylesheet">
   </body>
 </html>
