@@ -50,7 +50,7 @@
         </span>
       </header>
       <div id="content" style="padding: 32px;">
-        <h1>Please <a href="https://tempo.matthewwhitaker.me/widget" target="_blank">Sign In</a>.</h1>
+        <h3>Please <a href="https://tempo.matthewwhitaker.me/widget?r=#&c=0" target="_blank">Sign In</a>.</h3>
       </div>
       <footer>
         &copy; 2017 Sub 6 Resources<br />
@@ -80,9 +80,9 @@
               };
               classStudentsRef.set(classUpdates);
               database.ref("/users/"+currentUser.uid+"/classes").update(updates);
-              document.getElementById("content").innerHTML = "<h1>Successfully joined class. Redirecting...</h1>";
+              document.getElementById("content").innerHTML = "<h3>Successfully joined class. Redirecting...</h3>";
             } else {
-              document.getElementById("content").innerHTML = "<h1>That class does not exist.</h1>";
+              document.getElementById("content").innerHTML = "<h3>That class does not exist.</h3>";
             }
           });
         }
