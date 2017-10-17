@@ -80,6 +80,8 @@
               };
               classStudentsRef.set(classUpdates);
               database.ref("/users/"+currentUser.uid+"/classes").update(updates);
+            } else {
+              document.getElementById("content").innerHTML = "That class does not exist.";
             }
           });
         }
