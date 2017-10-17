@@ -4,7 +4,7 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/png" href="../ic_launcher.png">
-    <title>MusicTools</title>
+    <title>Tempo</title>
     
     <script src="https://www.gstatic.com/firebasejs/4.3.0/firebase.js"></script>
     <script src="https://www.gstatic.com/firebasejs/4.2.0/firebase-app.js"></script>
@@ -83,12 +83,12 @@
     </BottomNavigation>
   </body>
   <script src="https://matthewwhitaker.me/api/mhtml.js" async></script>
-  <script src="..//account.js?v=0"></script>
+  <script src="../account.js?v=0"></script>
   <script src="../app.js?v=0"></script>
   <script>
       function onAuthInit() {
         if(photoURL == null || photoURL == undefined) {
-          photoURL = "https://tempo.matthewwhitaker.me/null.svg";
+          photoURL = "../null.svg";
         }
         if(displayName == undefined || displayName == null) {
           displayName = "Signed Out";
