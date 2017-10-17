@@ -104,7 +104,9 @@
         setIncludeID("container", "tools");
       }
     function onMHTML() {
-      firebase.auth().onAuthStateChanged(function(user) {
+      
+    }
+    firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
           loadHome();
           loadMusic(user);
@@ -115,7 +117,6 @@
           setIncludeID("container", "signed-out");
         }
       });
-    }
     function loadHome() {
       document.getElementById("home_container").innerHTML = "<card padding>Home</card>";
     }
