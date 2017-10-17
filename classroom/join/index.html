@@ -68,17 +68,18 @@
         document.getElementById("accountimgandname").innerHTML=" <span class='larger'></span> "+displayName+" <img src='"+photoURL+"' height='35px' id='accountImage' align='middle' />";
         var classId = getParameterByName("j");
         if(displayName != "Signed Out") {
-          alert("UID: "+uid+"\n Class ID: "+classId);
-          var studentinref = database.ref("users/"+uid+"/studentin/");
-          var classStudentsRef = database.ref("classes/"+classId+"/students/"+uid);
-          var profileUpdates = {};
-          profileUpdates['/'+classId] = "true";
-          studentinref.update(profileUpdates);
-          var classUpdates = {
-            name: displayName
-          };
-          classStudentsRef.set(classUpdates);
-          database.ref("/users/"+currentUser.uid+"/classes").update(updates);
+          if(classId != null) {
+            var studentinref = database.ref("users/"+uid+"/studentin/");
+            var classStudentsRef = database.ref("classes/"+classId+"/students/"+uid);
+            var profileUpdates = {};
+            profileUpdates['/'+classId] = "true";
+            studentinref.update(profileUpdates);
+            var classUpdates = {
+              name: displayName
+            };
+            classStudentsRef.set(classUpdates);
+            database.ref("/users/"+currentUser.uid+"/classes").update(updates);
+          }
         }
       }
     </script>
