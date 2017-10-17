@@ -6,6 +6,15 @@
     <link rel="icon" type="image/png" href="../../ic_launcher.png">
     <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
     <script>
+      function getParameterByName(name) {
+        var url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
+      }
       // Initialize Firebase
       var config = {
         apiKey: "AIzaSyCkr17eHQRyOX4tlE-qluYt52AhXM7Gg0I",
