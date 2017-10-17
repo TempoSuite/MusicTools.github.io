@@ -54,7 +54,7 @@
     </style>
   </head>
   <body>
-    <toolbar title="MusicTools"></toolbar>
+    <toolbar title="Tempo"></toolbar>
     
     <fragment id="home" style="display:none;">
       Home Coming Soon!
@@ -71,7 +71,7 @@
       Tools Coming Soon!
     </fragment>
     <fragment id="signed-out" style="display:none;">
-      Signed Out! Please <a href="https://musictools.matthewwhitaker.me/widget">sign in</a>.
+      Signed Out! Please <a href="../widget">sign in</a>.
     </fragment>
     <content>
       <include id="container" includeId="home"></include>
@@ -83,12 +83,12 @@
     </BottomNavigation>
   </body>
   <script src="https://matthewwhitaker.me/api/mhtml.js" async></script>
-  <script src="https://musictools.matthewwhitaker.me/account.js?v=0"></script>
-  <script src="https://musictools.matthewwhitaker.me/app.js?v=0"></script>
+  <script src="..//account.js?v=0"></script>
+  <script src="../app.js?v=0"></script>
   <script>
       function onAuthInit() {
         if(photoURL == null || photoURL == undefined) {
-          photoURL = "https://musictools.matthewwhitaker.me/null.svg";
+          photoURL = "https://tempo.matthewwhitaker.me/null.svg";
         }
         if(displayName == undefined || displayName == null) {
           displayName = "Signed Out";
@@ -134,6 +134,6 @@
     function addMusic(key, artist, duration, title, year, url) {
       document.getElementById("music_list").innerHTML += "<div><a href='"+url+"'>"+title+"--Year: "+year+" Artist: "+artist+" Duration: "+duration+"</a></div>"
     }
-    addMusic(0, "Matthew Whitaker", 1230, "Matthew's Song", 2015)
+    //addMusic(0, "Matthew Whitaker", 1230, "Matthew's Song", 2015)
     </script>
 </html>
