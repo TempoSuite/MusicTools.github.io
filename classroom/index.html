@@ -47,8 +47,6 @@
     </fragment>
     <script src="https://matthewwhitaker.me/api/mhtml.js"></script>
     <script>
-      try {
-      alert("Script started...");
       function onAuthInit() {
           if(photoURL == null || photoURL == undefined) {
             photoURL = "https://tempo.matthewwhitaker.me/null.svg";
@@ -58,34 +56,25 @@
           }
       }
       function onMHTML() {
-        alert("MHTML done");
         firebase.auth().onAuthStateChanged(function(user) {
-          alert("Auth changed");
           currentUser = user;
           if (user) {
-            alert("User");
             database.ref("/users/"+user.uid+"/classes").once('value').then(function(snapshot) {
-              alert("Classes found");
               if(snapshot.val()) {
-                alert("Has classes");
                 //User has classes
                 setIncludeID("container", "classroomFragment");
                 loadClasses();
               } else {
-                alert("No classes :(");
                 //User needs to create a class.
                 setIncludeID("container", "createClassFragment");
               }
             });
           } else {
-            alert("Redirecting...");
             window.location.replace("https://tempo.matthewwhitaker.me/widget?r=https://tempo.matthewwhitaker.me/classroom");
           }
         });
-        alert("End MHTML function");
       }
       function newClass() {
-        alert("Creating new class");
         var className = document.getElementById("classname").value;
         var classDescription = document.getElementById("classdescription").value;
         var classSchoolName = document.getElementById("classschoolname").value;
@@ -104,25 +93,19 @@
         window.location.reload();
       }
       function loadClasses() {
-        alert("Loading classes");
         var classesRef = database.ref("users/"+user.uid+"/classes");
         classesRef.on('child_added', function(data) {
           addClass(data.key);
         });
       }
       function addClass(classKey) {
-        alert("Adding class");
         var thisClassRef = database.ref("classes/"+classKey);
         thisClassRef.once("value").then(function(data) {
           var className = data.val().className;
           var classDescription = data.val().className;
           var classSchoolName = data.val().classSchoolName;
-          document.getElementById("classes_container").innerHTML += "<card padding><h2>"+className"+</h2>"+classDescription+"</card>"
+          document.getElementById("classes_container").innerHTML += "<card padding><h2>"+className+"</h2>"+classDescription+"</card>";
         });
-      }
-      alert("End script...");
-      } catch(e) {
-        alert(e);
       }
     </script>
     <script src="../account.js"></script>
