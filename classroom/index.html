@@ -22,6 +22,11 @@
       firebase.initializeApp(config);
       var database = firebase.database();
     </script>
+    <style>
+      card {
+        margin: 16px;
+      }
+    </style>
     <link rel="stylesheet" href="../utilities/loader.css">
   </head>
   <body>
@@ -51,7 +56,7 @@
       <mbutton onClick="newClass()">Create Class</mbutton>
     </fragment>
     <fragment id="classroomFragment">
-      <h1>Classroom is currently under construction...</h1>
+      <div id="classes_container">Loading...</div>
     </fragment>
     <fragment id="loadingFragment">
       <div style="text-align:center;"><h1>Loading...</h1></div>
@@ -74,6 +79,7 @@
               if(snapshot.val()) {
                 //User has classes
                 setIncludeID("container", "classroomFragment");
+                loadClasses();
               } else {
                 //User needs to create a class.
                 setIncludeID("container", "createClassFragment");
@@ -101,6 +107,21 @@
         updates['/'+newClassKey] = "true";
         database.ref("/users/"+currentUser.uid+"/classes").update(updates);
         window.location.reload();
+      }
+      function loadClasses() {
+        var classesRef = database.ref("users/"+user.uid+"/classes");
+        classesRef.on('child_added', function(data) {
+          addClass(data.key);
+        });
+      }
+      function addClass(classKey) {
+        var thisClassRef = database.ref("classes/"+classKey);
+        thisClassRef.once("value").then(function(data) {
+          var className = data.val().className;
+          var classDescription = data.val().className;
+          var classSchoolName = data.val().classSchoolName;
+          document.getElementById("classes_container").innerHTML += "<card padding><h2>"+className"+</h2>"+classDescription+"</card>"
+        });
       }
     </script>
     <script src="../account.js"></script>
