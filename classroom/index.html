@@ -43,6 +43,7 @@
     </fragment>
     <fragment id="classroomFragment">
       <div id="classes_container">Loading...</div>
+      <fab onClick="setIncludeID('container', 'createClassFragment')">add</fab>
     </fragment>
     <fragment id="loadingFragment">
       <div style="text-align:center;"><h1>Loading...</h1></div>
@@ -114,7 +115,7 @@
           var classDescription = data.val().classDescription;
           var classSchoolName = data.val().classSchoolName;
           alert("name: "+className+" description: "+classDescription);
-          document.getElementById("classes_container").innerHTML = "<card padding><h2>"+className+"</h2>"+classDescription+"</card>";
+          document.getElementById("classes_container").innerHTML = "<card padding><h2><a href='class/?id="+classKey+"'>"+className+"</a></h2>"+classDescription+"<br /></card>";
           setIncludeID("container", "classroomFragment");
         });
       }
