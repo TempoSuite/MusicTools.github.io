@@ -47,6 +47,7 @@
     </fragment>
     <script src="https://matthewwhitaker.me/api/mhtml.js"></script>
     <script>
+      try {
       alert("Script started...");
       function onAuthInit() {
           if(photoURL == null || photoURL == undefined) {
@@ -120,6 +121,9 @@
         });
       }
       alert("End script...");
+      } catch(e) {
+        alert(e);
+      }
     </script>
     <script src="../account.js"></script>
   </body>
