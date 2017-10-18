@@ -94,9 +94,7 @@
       }
       function loadClasses(user) {
         var classesRef = database.ref("users/"+user.uid+"/classes");
-        alert("Loading...");
         classesRef.on('child_added', function(data) {
-          alert("Add Class");
           addClass(data.key);
         });
       }
@@ -104,7 +102,7 @@
         var thisClassRef = database.ref("classes/"+classKey);
         thisClassRef.once("value").then(function(data) {
           var className = data.val().className;
-          var classDescription = data.val().className;
+          var classDescription = data.val().classDescription;
           var classSchoolName = data.val().classSchoolName;
           alert("name: "+className+" description: "+classDescription);
           document.getElementById("classes_container").innerHTML += "<card padding><h2>"+className+"</h2>"+classDescription+"</card>";
