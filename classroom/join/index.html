@@ -80,7 +80,7 @@
               };
               classStudentsRef.set(classUpdates);
               document.getElementById("content").innerHTML = "<h3>Successfully joined class. Redirecting...</h3>";
-              window.location.assign("https://tempo.matthewwhitaker.me/dashboard");
+              window.location.replace("https://tempo.matthewwhitaker.me/dashboard");
             } else {
               document.getElementById("content").innerHTML = "<h3>That class does not exist.</h3>";
             }
