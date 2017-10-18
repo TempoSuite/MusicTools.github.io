@@ -63,8 +63,7 @@
               if(snapshot.val()) {
                 //User has classes
                 setIncludeID("container", "classroomFragment");
-                alert("Loading...");
-                loadClasses();
+                loadClasses(user);
               } else {
                 //User needs to create a class.
                 setIncludeID("container", "createClassFragment");
@@ -93,7 +92,7 @@
         database.ref("/users/"+currentUser.uid+"/classes").update(updates);
         window.location.reload();
       }
-      function loadClasses() {
+      function loadClasses(user) {
         var classesRef = database.ref("users/"+user.uid+"/classes");
         alert("Loading...");
         classesRef.on('child_added', function(data) {
