@@ -114,9 +114,11 @@
           var className = data.val().className;
           var classDescription = data.val().classDescription;
           var classSchoolName = data.val().classSchoolName;
-          alert("name: "+className+" description: "+classDescription);
-          document.getElementById("classes_container").innerHTML = "<card padding><h2><a href='class/?id="+classKey+"'>"+className+"</a></h2>"+classDescription+"<br /></card>";
-          setIncludeID("container", "classroomFragment");
+          if(document.getElementById("classes_container").innerHTML.contains("card")) {
+            document.getElementById("classes_container").innerHTML += "<card padding><h2><a href='class/?id="+classKey+"'>"+className+"</a></h2>"+classDescription+"<br /></card>";
+          } else {
+            document.getElementById("classes_container").innerHTML = "<card padding><h2><a href='class/?id="+classKey+"'>"+className+"</a></h2>"+classDescription+"<br /></card>";
+          }
         });
       }
     </script>
