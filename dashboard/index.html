@@ -106,7 +106,7 @@
     function onMHTML() {
       firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
-          loadHome();
+          loadHome(user);
           loadMusic(user);
           loadTools();
         } else {
@@ -117,11 +117,10 @@
       });
     }
     
-    function loadHome() {
-      document.getElementById("home_container").innerHTML = "<card padding>Home</card>";
+    function loadHome(user) {
+      
     }
     function loadMusic(user) {
-      document.getElementById("home").innerHTML += "User: "+user.displayName;
       if(user.uid != undefined) {
         var musicRef = database.ref("users/"+user.uid+"/music");
         musicRef.on('child_added', function(data) {
