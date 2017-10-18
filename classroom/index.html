@@ -106,6 +106,7 @@
           var classSchoolName = data.val().classSchoolName;
           alert("name: "+className+" description: "+classDescription);
           document.getElementById("classes_container").innerHTML = "<card padding><h2>"+className+"</h2>"+classDescription+"</card>";
+          setIncludeID("container", "classroomFragment");
         });
       }
     </script>
