@@ -105,7 +105,7 @@
           var classDescription = data.val().classDescription;
           var classSchoolName = data.val().classSchoolName;
           alert("name: "+className+" description: "+classDescription);
-          alert(document.getElementById("classes_container"));
+          alert(document.getElementById("classes_container").innerHTML);
           document.getElementById("classes_container").innerHTML = "<card padding><h2>"+className+"</h2>"+classDescription+"</card>";
         });
       }
