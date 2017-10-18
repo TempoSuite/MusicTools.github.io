@@ -114,7 +114,7 @@
           var className = data.val().className;
           var classDescription = data.val().classDescription;
           var classSchoolName = data.val().classSchoolName;
-          if(document.getElementById("classes_container").innerHTML.contains("card")) {
+          if(document.getElementById("classes_container").innerHTML.includes("card")) {
             document.getElementById("classes_container").innerHTML += "<card padding><h2><a href='class/?id="+classKey+"'>"+className+"</a></h2>"+classDescription+"<br /></card>";
           } else {
             document.getElementById("classes_container").innerHTML = "<card padding><h2><a href='class/?id="+classKey+"'>"+className+"</a></h2>"+classDescription+"<br /></card>";
