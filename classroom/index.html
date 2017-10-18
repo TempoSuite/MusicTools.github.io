@@ -27,25 +27,12 @@
         margin: 16px;
       }
     </style>
-    <link rel="stylesheet" href="../utilities/loader.css">
   </head>
   <body>
     <toolbar title="Tempo Classroom"></toolbar>
     <content>
       <include id="container" includeID="loadingFragment"></include>
     </content>
-    <fragment id="initialFragment">
-      <div style="text-align:center;">
-        <h1>Tempo Classroom is nearing completion!</h1>
-        <hr width="100%" />
-      </div>
-      Tempo Classroom helps you manage your music students by allowing them to submit playing tests and practice reports.<br />For a limited time, you can sign up for a free classroom account.
-      <mbutton accent onClick="setIncludeID('container','signInFragment')">Register Your Class</mbutton>
-    </fragment>
-    <fragment id="signInFragment">
-      To begin with, please sign in to or create your personal account in a new tab:<br />
-      <a href="../widget?r=https://tempo.matthewwhitaker.me/classroom#" target="_blank">Click here to sign in or create account in a new tab.</a>
-    </fragment>
     <fragment id="createClassFragment">
       <h3>Enter your class details:</h3>
       <form>
@@ -74,6 +61,7 @@
       function onMHTML() {
         firebase.auth().onAuthStateChanged(function(user) {
           currentUser = user;
+          alert(user.displayName);
           if (user) {
             database.ref("/users/"+user.uid+"/classes").once('value').then(function(snapshot) {
               if(snapshot.val()) {
@@ -86,7 +74,7 @@
               }
             });
           } else {
-            setIncludeID("container", "initialFragment");
+            window.location.replace("https://tempo.matthewwhitaker.me/widget?r=https://tempo.matthewwhitaker.me/classroom");
           }
         });
       }
