@@ -26,6 +26,9 @@
       card {
         margin:16px;
       }
+      body {
+        background-color:#eee;
+      }
     </style>
   </head>
   <body>
@@ -86,8 +89,6 @@
           }
         });
         document.getElementById("fab1").onclick = function() {setIncludeID('container', 'createClassFragment');};
-        console.log("Worked...");
-        console.log("click: "+document.getElementById('addClassFab').onclick);
       }
       function newClass() {
         var className = document.getElementById("classname").value;
@@ -106,7 +107,7 @@
         var updates = {};
         updates['/'+newClassKey] = "true";
         database.ref("/users/"+currentUser.uid+"/classes").update(updates);
-        window.location.reload();
+        setIncludeID('container', 'classroomFragment');
       }
       function loadClasses(user) {
         var classesRef = database.ref("users/"+user.uid+"/classes");
