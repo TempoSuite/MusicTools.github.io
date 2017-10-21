@@ -50,7 +50,7 @@
     </fragment>
     <fragment id="classroomFragment">
       <div id="classes_container">Loading...</div>
-      <fab onClick="function() {setIncludeID('container', 'createClassFragment');}">add</fab>
+      <fab id="addClassFab">add</fab>
     </fragment>
     <fragment id="loadingFragment">
       <div style="text-align:center;"><h1>Loading...</h1></div>
@@ -85,6 +85,7 @@
             window.location.replace("https://tempo.matthewwhitaker.me/widget?r=https://tempo.matthewwhitaker.me/classroom");
           }
         });
+        document.getElementById("addClassFab").onclick = function() {setIncludeID('container', 'createClassFragment');};
       }
       function newClass() {
         var className = document.getElementById("classname").value;
