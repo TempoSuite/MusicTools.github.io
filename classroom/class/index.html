@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tempo Classroom</title>
+    <meta name="viewport" content="width=device-width">
+    <mhtml type="primaryColor" color="#001E8D"></mhtml>
+    <mhtml type="accentColor" color="#FFD900"></mhtml>
+    <script src="https://matthewwhitaker.me/api/utilities.js"></script>
+    <link rel="icon" type="image/png" href="../../ic_launcher.png">
+    <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
+    <script>
+      var currentUser = null;
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyCkr17eHQRyOX4tlE-qluYt52AhXM7Gg0I",
+        authDomain: "fir-musictools.firebaseapp.com",
+        databaseURL: "https://fir-musictools.firebaseio.com",
+        projectId: "firebase-musictools",
+        storageBucket: "firebase-musictools.appspot.com",
+        messagingSenderId: "966591221600"
+      };
+      firebase.initializeApp(config);
+      var database = firebase.database();
+    </script>
+    <style>
+      card {
+        margin:16px;
+      }
+      body {
+        background-color:#eee;
+      }
+    </style>
+  </head>
+  <body>
+    <toolbar title="Tempo Classroom" back></toolbar>
+    
+    <!--Content-->
+    <content>
+      <card id="card1" padding></card>
+    </content>
+    
+    <script>
+      function onMHTML() {
+        var classId = getParameterByName("id");
+        document.getElementById("card1").innerHTML = classId;
+      }
+      function onBackButtonClick() {
+        window.location.assign("https://tempo.matthewwhitaker.me/classroom");
+      }
+    </script>
+  </body>
+</html>
