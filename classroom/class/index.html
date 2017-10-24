@@ -37,12 +37,12 @@
     <toolbar id="toolbar" title="Tempo Classroom" back></toolbar>
     
     <LeftNavigation>
-        <div onClick="setIncludeID('container', 'students')"><icon>people</icon><br />Students</div>
-        <div selected onClick="setIncludeID(setIncludeID('container', 'grading'))"><icon>spellcheck</icon><br />Grading</div>
+        <div selected onClick="setIncludeID('container', 'students')"><icon>people</icon><br />Students</div>
+        <div onClick="setIncludeID(setIncludeID('container', 'grading'))"><icon>spellcheck</icon><br />Grading</div>
     </LeftNavigation>
     <div id="right">
       <content>
-        <include id="container" includeID="grading"></include>
+        <include id="container" includeID="students"></include>
       </content>
     </div>
     <fragment id="students">
@@ -94,8 +94,12 @@
         database.ref("classes/"+classId+"/students").on('child_added', function(data) {
           var name = data.val().name;
           var id = data.key;
-          alert("Student: "+name+" id: "+id);
+          var studentlist = document.getElementById("studentlistview");
+          studentlist.innerHTML += "<item onClick='openStudent(\""+id+"\")'>"+name+"<span style="float:right;">Grade: "+grade+" ("+gradepercent+")</span></item>";
         });
+      }
+      function openStudent(id) {
+        window.location.assign("https://tempo.matthewwhitaker.me/classroom/class/student/?id="+getParameterByName("id")+"&stu="+id);
       }
       function onBackButtonClick() {
         window.location.assign("https://tempo.matthewwhitaker.me/classroom");
