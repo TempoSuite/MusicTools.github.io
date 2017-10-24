@@ -6,7 +6,7 @@
     <mhtml type="primaryColor" color="#001E8D"></mhtml>
     <mhtml type="accentColor" color="#FFD900"></mhtml>
     <script src="https://matthewwhitaker.me/api/utilities.js"></script>
-    <script src="https://matthewwhitaker.me/api/mhtml.js"></script>
+    <script src="https://matthewwhitaker.me/api/mhtml.js?v=101001"></script>
     <link rel="icon" type="image/png" href="../../ic_launcher.png">
     <script src="https://www.gstatic.com/firebasejs/4.3.1/firebase.js"></script>
     <script>
@@ -26,6 +26,7 @@
     <style>
       card {
         margin:16px;
+        min-width:100%;
       }
       body {
         background-color:#eee;
@@ -33,30 +34,64 @@
     </style>
   </head>
   <body>
-    <toolbar title="Tempo Classroom" back></toolbar>
+    <toolbar id="toolbar" title="Tempo Classroom" back></toolbar>
     
-    <!--Content-->
-    <content>
-      <card id="card1" padding></card>
-      
-      <!--Share Dialog-->
-      <dialog id="shareclassdialog">
-        <dialog-title>Class Link</dialog-title>
-        <dialog-content>Share this link with your students:<br />
-          <EditText id="sharelinkcontainer"></EditText>
-        </dialog-content>
-        <dialog-action>
-          <mbutton flat accent>Copy</mbutton>
-          <mbutton flat accent>Close</mbutton>
-        </dialog-action>
-      </dialog>
-      
-    </content>
-    
+    <LeftNavigation>
+        <div onClick="setIncludeID('container', 'students')"><icon>people</icon><br />Students</div>
+        <div selected onClick="setIncludeID(setIncludeID('container', 'grading'))"><icon>spellcheck</icon><br />Grading</div>
+    </LeftNavigation>
+    <div id="right">
+      <content>
+        <include id="container" includeID="grading"></include>
+      </content>
+    </div>
+    <fragment id="students">
+      Students
+      <card>
+        <ListView id="studentlistview">
+          <item>Student 1<span style="float:right;">Grade: A- (92.87%)</span></item>
+          <item>Student 2<span style="float:right;">Grade: C+ (79.43%)</span></item>
+        </ListView>
+      </card>
+      Students Requesting Access
+      <div id="requestaccess">
+        <card padding>
+          Matthew Whitaker<br /><br /><mbutton flat>Accept</mbutton><mbutton flat>Deny</mbutton></item>
+        </card>
+        <card padding>
+          McKay Hicken<br /><br /><mbutton flat>Accept</mbutton><mbutton flat>Deny</mbutton>
+      </card>
+      </div>
+    </fragment>
+    <fragment id="grading">
+      To Grade
+      <card>
+        <ListView id="togradelistview">
+          <item>Playing Test #123 -- McKay Hicken</item>
+        </ListView>
+      </card>
+      Submitted Late
+      <card>
+        <ListView id="submittedlatelistview">
+          <div style="text-align:center; margin:16px; font-size:64px; color:#999;">
+            <icon>check</icon>
+          </div>
+        </ListView>
+      </card>
+      Graded
+      <card>
+        <ListView id="gradedlistview">
+          <item>Playing Test #123 -- Matthew Whitaker</item>
+        </ListView>
+      </card>
+    </fragment>
     <script>
       function onMHTML() {
         var classId = getParameterByName("id");
-        document.getElementById("card1").innerHTML = classId;
+        database.ref("classes/"+classId).once('value').then(function(data) {
+          var className = data.val().className;
+          document.getElementById("toolbar").setAttribute("title", className);
+        });
       }
       function onBackButtonClick() {
         window.location.assign("https://tempo.matthewwhitaker.me/classroom");
