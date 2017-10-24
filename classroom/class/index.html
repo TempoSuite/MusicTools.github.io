@@ -94,6 +94,8 @@
         database.ref("classes/"+classId+"/students").on('child_added', function(data) {
           var name = data.val().name;
           var id = data.key;
+          var grade = data.val().grade;
+          var gradepercent = data.val().gradepercent;
           var studentlist = document.getElementById("studentlistview");
           studentlist.innerHTML += "<item onClick='openStudent(\""+id+"\")'>"+name+"<span style='float:right;'>Grade: "+grade+" ("+gradepercent+")</span></item>";
         });
