@@ -49,8 +49,7 @@
       Students
       <card>
         <ListView id="studentlistview">
-          <item>Student 1<span style="float:right;">Grade: A- (92.87%)</span></item>
-          <item>Student 2<span style="float:right;">Grade: C+ (79.43%)</span></item>
+          
         </ListView>
       </card>
       Students Requesting Access
@@ -91,6 +90,11 @@
         database.ref("classes/"+classId).once('value').then(function(data) {
           var className = data.val().className;
           document.getElementById("toolbar").setAttribute("title", className);
+        });
+        database.ref("classes/"+classId+"/students").on('child_added', function(data) {
+          var name = data.val().name;
+          var id = data.key;
+          alert("Student: "+name+" id: "+id);
         });
       }
       function onBackButtonClick() {
