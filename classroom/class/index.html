@@ -95,7 +95,7 @@
           var name = data.val().name;
           var id = data.key;
           var studentlist = document.getElementById("studentlistview");
-          studentlist.innerHTML += "<item onClick='openStudent(\""+id+"\")'>"+name+"<span style="float:right;">Grade: "+grade+" ("+gradepercent+")</span></item>";
+          studentlist.innerHTML += "<item onClick='openStudent(\""+id+"\")'>"+name+"<span style='float:right;'>Grade: "+grade+" ("+gradepercent+")</span></item>";
         });
       }
       function openStudent(id) {
