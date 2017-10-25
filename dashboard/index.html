@@ -58,7 +58,7 @@
     
     <fragment id="home" style="display:none;">
       Home Coming Soon!
-      <div id="home_container"></div>
+      <ListView id="home_container"></ListView>
     </fragment>
     <fragment id="music" style="display:none;">
       <card padding>
@@ -118,7 +118,12 @@
     }
     
     function loadHome(user) {
-      
+      if(user.uid != undefined) {
+        var cardRef = database.ref("cards/"+user.uid);
+        cardRef.on("child_added", function(data) {
+          addCard(data.val().type, data.val().title, data.val().supporttext, data.val().text);
+        });
+      }
     }
     function loadMusic(user) {
       if(user.uid != undefined) {
@@ -132,7 +137,22 @@
       
     }
     function addMusic(key, artist, duration, title, year, url) {
-      document.getElementById("music_list").innerHTML += "<div><a href='"+url+"'>"+title+"--Year: "+year+" Artist: "+artist+" Duration: "+duration+"</a></div>"
+      document.getElementById("music_list").innerHTML += "<item onClick='window.location.assign("+url+")'>"+title+"--Year: "+year+" Artist: "+artist+" Duration: "+duration+"</item>"
+    }
+    
+    function addCard(type, title, supporttext, text) {
+      var homeContainer = document.getElementById("home_container");
+      switch(type) {
+        case "generic":
+          homeContainer.innerHTML += "<card padding><h2>"+title+"</h2><div style='color:gray;'>"+supporttext+"</div>"+text+"</card>";
+          break;
+        case "grade":
+          homeContainer.innerHTML += "Grade Card";
+          break;
+        case "viewclass":
+          homeContainer.innerHTML += "View Class Card";
+          break;
+      }
     }
     //addMusic(0, "Matthew Whitaker", 1230, "Matthew's Song", 2015)
     </script>
