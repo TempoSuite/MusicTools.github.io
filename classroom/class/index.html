@@ -51,6 +51,10 @@
         <ListView id="studentlistview">
           
         </ListView>
+        <div style="margin:16px;">
+          Tell students to go to this url to join your class:<br />
+          <EditText id="shareurl" value="Loading..."></EditText>
+        </div>
       </card>
     </fragment>
     <fragment id="grading">
@@ -78,6 +82,10 @@
     <script>
       function onMHTML() {
         var classId = getParameterByName("id");
+        if(classId == null) {
+          window.location.assign("https://tempo.matthewwhitaker.me/classroom/?err=exist");
+        }
+        document.getElementById("shareurl").value = "https://tempo.matthewwhitaker.me/class/join/?j="+classId;
         database.ref("classes/"+classId).once('value').then(function(data) {
           var className = data.val().className;
           document.getElementById("toolbar").setAttribute("title", className);
